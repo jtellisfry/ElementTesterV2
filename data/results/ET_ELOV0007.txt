@@ -1,0 +1,53 @@
+======================================================================
+ELEMENT TESTER - TEST SESSION LOG
+======================================================================
+Session ID:    ET_ELOV0007
+Start Time:    2026-02-19 14:17:23
+Work Order:    TESTING
+Part Number:   TESTING
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+----------------------------------------------------------------------
+
+[14:17:38] MEASUREMENT TEST - Attempt #1
+    Result: FAIL
+    Message: Failed: LP1 (18.5Ω out of 9.1-9.8Ω), LP2 (18.1Ω out of 9.1-9.8Ω), LP3 (18.3Ω out of 9.1-9.8Ω), RP1 (18.5Ω out of 9.1-9.8Ω), RP2 (18.1Ω out of 9.1-9.8Ω), RP3 (18.3Ω out of 9.1-9.8Ω)
+    Pin Readings:
+        Pin 1 to 6 (L): 18.5
+        Pin 2 to 5 (L): 18.1
+        Pin 3 to 4 (L): 18.3
+        Pin 1 to 6 (R): 18.5
+        Pin 2 to 5 (R): 18.1
+        Pin 3 to 4 (R): 18.3
+
+[14:18:18] MEASUREMENT TEST - Attempt #2
+    Result: PASS
+    Message: All measurements within limits
+    Pin Readings:
+        Pin 1 to 6 (L): 9.6
+        Pin 2 to 5 (L): 9.4
+        Pin 3 to 4 (L): 9.4
+        Pin 1 to 6 (R): 9.6
+        Pin 2 to 5 (R): 9.4
+        Pin 3 to 4 (R): 9.4
+
+[14:18:28] HIPOT TEST - Attempt #1
+    Result: FAIL
+    Message: 01,ACW,Cont. Hi-Lmt,----,----,2.0
+    Raw: 01,ACW,Cont. Hi-Lmt,----,----,2.0
+
+[14:18:46] HIPOT TEST - Attempt #2
+    Result: PASS
+    Message: 01,ACW,PASS,1.24,2.338,2.0
+    Raw: 01,ACW,PASS,1.24,2.338,2.0
+
+----------------------------------------------------------------------
+SESSION SUMMARY
+----------------------------------------------------------------------
+End Time:      2026-02-19 14:18:49
+Duration:      85.3 seconds
+Hipot Attempts:       2
+Measurement Attempts: 2
+
+FINAL RESULT: PASS
+Notes: Mode: normal | Hipot + Measuring completed successfully
+======================================================================

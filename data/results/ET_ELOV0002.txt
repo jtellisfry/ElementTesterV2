@@ -1,0 +1,92 @@
+======================================================================
+ELEMENT TESTER - TEST SESSION LOG
+======================================================================
+Session ID:    ET_ELOV0002
+Start Time:    2026-02-19 12:03:06
+Work Order:    40741
+Part Number:   8074598
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+----------------------------------------------------------------------
+
+[12:03:21] MEASUREMENT TEST - Attempt #1
+    Result: FAIL
+    Message: Failed: LP1 (29.7Ω out of 9.1-9.8Ω), LP2 (42.2Ω out of 9.1-9.8Ω), LP3 (13.8Ω out of 9.1-9.8Ω), RP1 (29.7Ω out of 9.1-9.8Ω), RP2 (42.2Ω out of 9.1-9.8Ω), RP3 (13.8Ω out of 9.1-9.8Ω)
+    Pin Readings:
+        Pin 1 to 6 (L): 29.7
+        Pin 2 to 5 (L): 42.2
+        Pin 3 to 4 (L): 13.8
+        Pin 1 to 6 (R): 29.7
+        Pin 2 to 5 (R): 42.2
+        Pin 3 to 4 (R): 13.8
+
+[12:03:48] MEASUREMENT TEST - Attempt #2
+    Result: FAIL
+    Message: Failed: LP1 (29.4Ω out of 9.1-9.8Ω), LP2 (41.7Ω out of 9.1-9.8Ω), LP3 (13.9Ω out of 9.1-9.8Ω), RP1 (29.4Ω out of 9.1-9.8Ω), RP2 (41.7Ω out of 9.1-9.8Ω), RP3 (13.9Ω out of 9.1-9.8Ω)
+    Pin Readings:
+        Pin 1 to 6 (L): 29.4
+        Pin 2 to 5 (L): 41.7
+        Pin 3 to 4 (L): 13.9
+        Pin 1 to 6 (R): 29.4
+        Pin 2 to 5 (R): 41.7
+        Pin 3 to 4 (R): 13.9
+
+[12:12:14] MEASUREMENT TEST - Attempt #3
+    Result: FAIL
+    Message: Failed: LP1 (29.3Ω out of 9.1-9.8Ω), LP2 (69.0Ω out of 9.1-9.8Ω), RP1 (29.3Ω out of 9.1-9.8Ω), RP2 (69.0Ω out of 9.1-9.8Ω)
+    Pin Readings:
+        Pin 1 to 6 (L): 29.3
+        Pin 2 to 5 (L): 69.0
+        Pin 3 to 4 (L): 9.4
+        Pin 1 to 6 (R): 29.3
+        Pin 2 to 5 (R): 69.0
+        Pin 3 to 4 (R): 9.4
+
+[12:12:48] MEASUREMENT TEST - Attempt #4
+    Result: FAIL
+    Message: Failed: LP1 (21.9Ω out of 9.1-9.8Ω), LP2 (19.3Ω out of 9.1-9.8Ω), LP3 (18.4Ω out of 9.1-9.8Ω), RP1 (21.9Ω out of 9.1-9.8Ω), RP2 (19.3Ω out of 9.1-9.8Ω), RP3 (18.4Ω out of 9.1-9.8Ω)
+    Pin Readings:
+        Pin 1 to 6 (L): 21.9
+        Pin 2 to 5 (L): 19.3
+        Pin 3 to 4 (L): 18.4
+        Pin 1 to 6 (R): 21.9
+        Pin 2 to 5 (R): 19.3
+        Pin 3 to 4 (R): 18.4
+
+[12:13:23] MEASUREMENT TEST - Attempt #5
+    Result: FAIL
+    Message: Failed: LP1 (18.8Ω out of 9.1-9.8Ω), LP2 (18.5Ω out of 9.1-9.8Ω), LP3 (18.4Ω out of 9.1-9.8Ω), RP1 (18.8Ω out of 9.1-9.8Ω), RP2 (18.5Ω out of 9.1-9.8Ω), RP3 (18.4Ω out of 9.1-9.8Ω)
+    Pin Readings:
+        Pin 1 to 6 (L): 18.8
+        Pin 2 to 5 (L): 18.5
+        Pin 3 to 4 (L): 18.4
+        Pin 1 to 6 (R): 18.8
+        Pin 2 to 5 (R): 18.5
+        Pin 3 to 4 (R): 18.4
+
+[12:16:26] MEASUREMENT TEST - Attempt #6
+    Result: PASS
+    Message: All measurements within limits
+    Pin Readings:
+        Pin 1 to 6 (L): 9.7
+        Pin 2 to 5 (L): 9.6
+        Pin 3 to 4 (L): 9.4
+        Pin 1 to 6 (R): 9.7
+        Pin 2 to 5 (R): 9.6
+        Pin 3 to 4 (R): 9.4
+
+[12:16:36] HIPOT TEST - Attempt #1
+    Result: PASS
+    Message: 01,ACW,PASS,1.24,2.312,2.0
+    Raw: 01,ACW,PASS,1.24,2.312,2.0
+
+----------------------------------------------------------------------
+SESSION SUMMARY
+----------------------------------------------------------------------
+End Time:      2026-02-19 12:16:39
+Duration:      812.9 seconds
+Hipot Attempts:       1
+Measurement Attempts: 6
+
+FINAL RESULT: PASS
+Notes: Mode: normal | Hipot + Measuring completed successfully
+======================================================================

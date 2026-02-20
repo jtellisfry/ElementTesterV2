@@ -1,0 +1,389 @@
+"""Simple QC print helper.
+
+Public API:
+- `print_message(work_order, part_number, ...)` — central function used by
+  other modules. It writes a QC message to a file and prints it using the
+  Windows print flow (ctypes SetDefaultPrinter + `os.startfile(..., "print")`).
+
+Design goals:
+- Minimal and easy to call: callers pass fields to `print_message`.
+- `main()` provides a simple test runner using default values.
+"""
+from __future__ import annotations
+
+import os
+import time
+import threading
+from typing import Optional
+
+# Path to write QC ticket. Change if desired.
+qc_file_location = r"C:\Files\element tester\Element_Tester\assets\QCTicket.txt"
+
+# Default printer name for QC labels.
+qc_printer_name = "Brother PT-P700"
+
+# Default message template. Callers may pass a custom `message` or rely on
+# this template which will be formatted with `workorder`, `partnumber`, 
+# `timestamp`, and `serialnumber`.
+qc_message = "PASSED\nWO:{workorder}\nPN:{partnumber}\nTS: {timestamp}\nSN: {serialnumber}"
+
+
+def _get_default_printer_ctypes() -> str:
+    try:
+        from ctypes import create_unicode_buffer, byref, windll, wintypes
+
+        buf_size = wintypes.DWORD(260)
+        buf = create_unicode_buffer(buf_size.value)
+        res = windll.winspool.GetDefaultPrinterW(buf, byref(buf_size))
+        if res == 0:
+            return ""
+        return buf.value
+    except Exception:
+        return ""
+
+
+def _set_default_printer_ctypes(name: str) -> bool:
+    try:
+        from ctypes import windll, c_wchar_p
+
+        res = windll.winspool.SetDefaultPrinterW(c_wchar_p(name))
+        return bool(res)
+    except Exception:
+        return False
+
+
+def _print_to_printer_directly(file_path: str, printer_name: str) -> bool:
+    """Print a text file directly to a specific printer using PowerShell Out-Printer.
+    
+    This bypasses Notepad entirely, avoiding theme-related issues where Notepad
+    in dark mode might cause printing problems with label printers.
+    """
+    try:
+        import subprocess
+        
+        # Read the file content
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        
+        # Escape single quotes for PowerShell
+        ps_content = content.replace("'", "''")
+        
+        # Use PowerShell Out-Printer - sends raw text directly to printer
+        ps_command = f"'{ps_content}' | Out-Printer -Name '{printer_name}'"
+        
+        result = subprocess.run(
+            ["powershell", "-NoProfile", "-Command", ps_command],
+            capture_output=True,
+            timeout=30
+        )
+        return result.returncode == 0
+        
+    except Exception as e:
+        print(f"Direct print failed: {e}")
+        return False
+
+
+def _set_notepad_light_theme() -> None:
+    """Force Notepad to use dark theme for printing.
+    
+    Notepad inherits theme from parent process. This sets the registry 
+    to force dark theme for Notepad to ensure consistent printing behavior.
+    """
+    try:
+        import winreg
+        key_path = r"Software\Microsoft\Notepad"
+        try:
+            key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, key_path, 0, winreg.KEY_SET_VALUE)
+        except FileNotFoundError:
+            key = winreg.CreateKey(winreg.HKEY_CURRENT_USER, key_path)
+        
+        # Theme = 0 means "Use system setting", 1 = Light, 2 = Dark
+        winreg.SetValueEx(key, "Theme", 0, winreg.REG_DWORD, 2)
+        winreg.CloseKey(key)
+    except Exception:
+        pass  # If registry access fails, continue anyway
+
+
+def _print_with_win32_gdi(text: str, printer_name: str, debug_log_path: str = None) -> bool:
+    """Print text using GDI (like Notepad does internally).
+    
+    This renders text properly with fonts, bypassing Notepad entirely.
+    Works reliably from both VS Code and PyInstaller exe.
+    Optimized for Brother PT-P700 with 0.94" x 1.50" labels.
+    """
+    def _log(msg: str):
+        if debug_log_path:
+            try:
+                with open(debug_log_path, "a", encoding="utf-8") as dbg:
+                    dbg.write(f"_print_with_win32_gdi: {msg}\n")
+            except:
+                pass
+    
+    try:
+        import win32print
+        import win32ui
+        _log(f"win32print and win32ui imported successfully")
+        
+        # Create a device context for the printer
+        hdc = win32ui.CreateDC()
+        _log(f"CreateDC successful")
+        hdc.CreatePrinterDC(printer_name)
+        _log(f"CreatePrinterDC({printer_name}) successful")
+        
+        # Get printable area
+        height = hdc.GetDeviceCaps(10)  # VERTRES
+        width = hdc.GetDeviceCaps(8)    # HORZRES
+        _log(f"Printer height (VERTRES): {height}, width (HORZRES): {width}")
+        
+        # Start the document
+        hdc.StartDoc("QC Label")
+        hdc.StartPage()
+        _log(f"StartDoc/StartPage successful")
+        
+        # Count lines to calculate optimal font size
+        lines = [line for line in text.split('\n') if line.strip()]
+        num_lines = len(lines)
+        
+        # Calculate font size based on label height and number of lines
+        # Need to fit all lines with some margin (top/bottom padding ~20px total)
+        # Formula: (height - padding) / num_lines gives line height, font is ~85% of that
+        available_height = height - 16  # Leave 8px top + 8px bottom margin
+        line_height = available_height // max(num_lines, 1)
+        font_height = max(16, int(line_height * 0.85))  # Font slightly smaller than line height
+        _log(f"Lines: {num_lines}, available_height: {available_height}, line_height: {line_height}, font_height: {font_height}")
+        
+        # Set up font
+        font = win32ui.CreateFont({
+            "name": "Arial",
+            "height": font_height,
+            "weight": 700,  # Bold
+        })
+        hdc.SelectObject(font)
+        _log(f"Font created and selected")
+        
+        # Print each line
+        start_y = 8  # Top margin
+        x = 8  # Left margin
+        _log(f"Printing {num_lines} lines")
+        
+        for i, line in enumerate(lines):
+            y = start_y + (i * line_height)
+            hdc.TextOut(x, y, line)
+        
+        hdc.EndPage()
+        hdc.EndDoc()
+        hdc.DeleteDC()
+        _log(f"Print completed successfully")
+        
+        return True
+        
+    except ImportError as e:
+        _log(f"ImportError: {e}")
+        return False
+    except Exception as e:
+        _log(f"Exception: {type(e).__name__}: {e}")
+        return False
+
+
+def print_message(
+    workorder: str,
+    partnumber: str,
+    serialnumber: Optional[str] = None,
+    message: Optional[str] = None,
+    file_path: Optional[str] = None,
+    printer_name: Optional[str] = None,
+    delay_s: float = 1.0,
+    encoding: str = "utf-8",
+) -> str:
+    """Write a QC message and send it to the printer.
+
+    Minimal API: callers can call `print_message("WO","PN")` or include
+    the serial number with `print_message("WO","PN","ET_ELOV0001")`.
+    
+    If `message` is provided it will be used verbatim; otherwise the
+    module-level `qc_message` template is formatted with `workorder`,
+    `partnumber`, `timestamp`, and `serialnumber`.
+    
+    If `serialnumber` is not provided, attempts to get it from the current
+    test session in result_logging module.
+
+    If `printer_name` is provided we attempt to set it as the system default
+    (ctypes) before calling `os.startfile(..., 'print')` and restore the
+    original default afterwards. If not provided, uses module-level `qc_printer_name`.
+    """
+    path = file_path or qc_file_location
+    printer = printer_name or qc_printer_name
+    now = time.strftime("%Y-%m-%d")
+    
+    # Get serial number from current session if not provided
+    sn = serialnumber
+    if sn is None:
+        try:
+            from element_tester.system.procedures.result_logging import get_current_session
+            session = get_current_session()
+            if session is not None:
+                sn = session.filename.replace('.txt', '')  # e.g., "ET_ELOV0001"
+        except Exception:
+            pass
+    if sn is None:
+        sn = "N/A"
+    
+    if message is None:
+        text = qc_message.format(workorder=workorder, partnumber=partnumber, timestamp=now, serialnumber=sn)
+    else:
+        text = (message
+                .replace("{workorder}", workorder)
+                .replace("{partnumber}", partnumber)
+                .replace("{timestamp}", now)
+                .replace("{serialnumber}", sn))
+
+    # Debug log file to diagnose PyInstaller print issues
+    import sys
+    debug_log = os.path.join(os.path.dirname(path), "print_debug.log")
+    try:
+        with open(debug_log, "a", encoding="utf-8") as dbg:
+            dbg.write(f"\n{'='*50}\n")
+            dbg.write(f"Timestamp: {now}\n")
+            dbg.write(f"sys.frozen: {getattr(sys, 'frozen', False)}\n")
+            dbg.write(f"sys.executable: {sys.executable}\n")
+            dbg.write(f"os.getcwd(): {os.getcwd()}\n")
+            dbg.write(f"File path: {path}\n")
+            dbg.write(f"Printer: {printer}\n")
+            dbg.write(f"Text to print ({len(text)} chars):\n{text}\n")
+    except Exception as e:
+        pass
+
+    # ensure parent
+    parent = os.path.dirname(path)
+    if parent and not os.path.exists(parent):
+        try:
+            os.makedirs(parent, exist_ok=True)
+        except Exception:
+            pass
+
+    # Write with explicit flush to ensure content is on disk
+    with open(path, "w", encoding=encoding) as f:
+        f.write(text)
+        f.flush()
+        os.fsync(f.fileno())  # Force write to disk
+
+    # Verify file was written correctly
+    try:
+        with open(debug_log, "a", encoding="utf-8") as dbg:
+            if os.path.exists(path):
+                file_size = os.path.getsize(path)
+                with open(path, "r", encoding=encoding) as verify:
+                    content = verify.read()
+                dbg.write(f"File exists: True, size: {file_size} bytes\n")
+                dbg.write(f"File content verification ({len(content)} chars):\n{content}\n")
+            else:
+                dbg.write(f"File exists: False - FILE NOT CREATED!\n")
+    except Exception as e:
+        pass
+
+    def _worker(p: str, d: float, printer: Optional[str], text_to_print: str) -> None:
+        debug_log = os.path.join(os.path.dirname(p), "print_debug.log")
+        try:
+            time.sleep(d)
+            if os.name != "nt":
+                return
+
+            # Use win32 GDI printing - works from both VS Code and PyInstaller exe
+            try:
+                with open(debug_log, "a", encoding="utf-8") as dbg:
+                    dbg.write(f"_worker: Using win32 GDI print method\n")
+                    dbg.write(f"_worker: Printer: {printer}\n")
+            except:
+                pass
+
+            success = _print_with_win32_gdi(text_to_print, printer, debug_log_path=debug_log)
+            
+            try:
+                with open(debug_log, "a", encoding="utf-8") as dbg:
+                    dbg.write(f"_worker: win32 GDI print result: {success}\n")
+            except:
+                pass
+
+            # OLD METHOD (commented out) - os.startfile with Notepad
+            # This doesn't work reliably from PyInstaller exe due to theme issues
+            # 
+            # # Force Notepad to light theme before printing to avoid
+            # # white-on-dark text issues with label printers
+            # _set_notepad_light_theme()
+            #
+            # # Log before calling os.startfile
+            # try:
+            #     with open(debug_log, "a", encoding="utf-8") as dbg:
+            #         dbg.write(f"_worker: About to call os.startfile({p!r}, 'print')\n")
+            #         dbg.write(f"_worker: File exists before print: {os.path.exists(p)}\n")
+            #         if os.path.exists(p):
+            #             dbg.write(f"_worker: File size: {os.path.getsize(p)}\n")
+            # except:
+            #     pass
+            #
+            # # Use os.startfile with the system default printer
+            # try:
+            #     os.startfile(p, "print")
+            #     with open(debug_log, "a", encoding="utf-8") as dbg:
+            #         dbg.write(f"_worker: os.startfile completed successfully\n")
+            # except Exception as e:
+            #     with open(debug_log, "a", encoding="utf-8") as dbg:
+            #         dbg.write(f"_worker: os.startfile FAILED: {e}\n")
+
+        except Exception as e:
+            try:
+                with open(debug_log, "a", encoding="utf-8") as dbg:
+                    dbg.write(f"_worker: Exception: {e}\n")
+            except:
+                pass
+
+    t = threading.Thread(target=_worker, args=(path, delay_s, printer, text))
+    t.start()
+    return os.path.abspath(path)
+
+
+
+
+
+def main() -> None:
+    # simple runnable test: pick a printer and send the ticket to it.
+    import subprocess
+    import json
+
+    # Attempt to list printers via PowerShell and pick a sensible target.
+    target_printer: Optional[str] = None
+    try:
+        cmd = [
+            "powershell",
+            "-NoProfile",
+            "-Command",
+            "Get-Printer | Select-Object -Property Name,Default | ConvertTo-Json -Depth 2",
+        ]
+        out = subprocess.check_output(cmd, stderr=subprocess.DEVNULL)
+        data = json.loads(out.decode("utf-8", errors="ignore"))
+        # data may be a dict (single) or list
+        printers = data if isinstance(data, list) else [data]
+        # prefer default
+        for p in printers:
+            if p.get("Default"):
+                target_printer = p.get("Name")
+                break
+        # else prefer Brother
+        if not target_printer:
+            for p in printers:
+                name = p.get("Name", "")
+                if "Brother" in name:
+                    target_printer = name
+                    break
+        # fallback to first printer
+        if not target_printer and printers:
+            target_printer = printers[0].get("Name")
+    except Exception:
+        target_printer = None
+
+    # send print job (no console output) - include test serial number
+    _ = print_message("TESTWO", "TESTPN", serialnumber="ET_ELOV0000", printer_name=target_printer, delay_s=1.0)
+
+
+if __name__ == "__main__":
+    main()

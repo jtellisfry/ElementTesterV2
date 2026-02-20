@@ -1,0 +1,59 @@
+======================================================================
+ELEMENT TESTER - TEST SESSION LOG
+======================================================================
+Session ID:    ET_ELOV0004
+Start Time:    2026-02-19 13:00:26
+Work Order:    41635
+Part Number:   8074598
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+----------------------------------------------------------------------
+
+[13:00:41] MEASUREMENT TEST - Attempt #1
+    Result: FAIL
+    Message: Failed: LP2 (14.0Ω out of 9.1-9.8Ω), LP3 (13.9Ω out of 9.1-9.8Ω), RP2 (14.0Ω out of 9.1-9.8Ω), RP3 (13.9Ω out of 9.1-9.8Ω)
+    Pin Readings:
+        Pin 1 to 6 (L): 9.6
+        Pin 2 to 5 (L): 14.0
+        Pin 3 to 4 (L): 13.9
+        Pin 1 to 6 (R): 9.6
+        Pin 2 to 5 (R): 14.0
+        Pin 3 to 4 (R): 13.9
+
+[13:01:47] MEASUREMENT TEST - Attempt #2
+    Result: FAIL
+    Message: Problem with the UT61xP measurement application. Call (318-272-3118)
+    Pin Readings:
+        Pin 1 to 6 (L): 18.6
+        Pin 2 to 5 (L): 0.0
+        Pin 3 to 4 (L): 0.0
+        Pin 1 to 6 (R): 18.6
+        Pin 2 to 5 (R): 0.0
+        Pin 3 to 4 (R): 0.0
+
+[13:04:16] MEASUREMENT TEST - Attempt #3
+    Result: PASS
+    Message: All measurements within limits
+    Pin Readings:
+        Pin 1 to 6 (L): 9.6
+        Pin 2 to 5 (L): 9.5
+        Pin 3 to 4 (L): 9.4
+        Pin 1 to 6 (R): 9.6
+        Pin 2 to 5 (R): 9.5
+        Pin 3 to 4 (R): 9.4
+
+[13:04:26] HIPOT TEST - Attempt #1
+    Result: PASS
+    Message: 01,ACW,PASS,1.24,2.348,2.0
+    Raw: 01,ACW,PASS,1.24,2.348,2.0
+
+----------------------------------------------------------------------
+SESSION SUMMARY
+----------------------------------------------------------------------
+End Time:      2026-02-19 13:04:29
+Duration:      242.5 seconds
+Hipot Attempts:       1
+Measurement Attempts: 3
+
+FINAL RESULT: PASS
+Notes: Mode: normal | Hipot + Measuring completed successfully
+======================================================================

@@ -1,0 +1,54 @@
+Timestamp: 2026-02-18T10:55:07
+Mode: normal
+Work Order #: 41636
+Part #: 8074598
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+Hypot Result: 01,ACW,PASS,1.24,2.318,2.0
+Measurement Result: LP1to6: 9.6 | LP2to5:  | LP3to4:  | RP1to6: 9.6 | RP2to5:  | RP3to4:
+Overall: PASS
+------------------------------------------------------------
+Timestamp: 2026-02-18T11:14:04
+Mode: normal
+Work Order #: l
+Part #: l
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+Hypot Result: Hipot test not run
+Measurement Result: LP1to6: 15.6 | LP2to5:  | LP3to4:  | RP1to6: 15.6 | RP2to5:  | RP3to4:
+Overall: FAIL
+------------------------------------------------------------
+Timestamp: 2026-02-18T13:55:08
+Mode: normal
+Work Order #: testing
+Part #: testing
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+Hypot Result: 01,ACW,PASS,1.24,1.188,2.0
+Measurement Result: LP1to6: 9.7 | LP2to5:  | LP3to4:  | RP1to6: 9.7 | RP2to5:  | RP3to4:
+Overall: PASS
+------------------------------------------------------------
+Timestamp: 2026-02-18T14:02:26
+Mode: normal
+Work Order #: testing
+Part #: testing
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+Hypot Result: 01,ACW,PASS,1.24,1.166,2.0
+Measurement Result: LP1to6: 9.6 | LP2to5:  | LP3to4:  | RP1to6: 9.6 | RP2to5:  | RP3to4:
+Overall: PASS
+------------------------------------------------------------
+Timestamp: 2026-02-18T14:04:00
+Mode: normal
+Work Order #: testing
+Part #: testing
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+Hypot Result: 01,ACW,ARC-Fail,1.24,1.167,0.1
+Measurement Result: LP1to6:  | LP2to5:  | LP3to4:  | RP1to6:  | RP2to5:  | RP3to4:
+Overall: FAIL
+------------------------------------------------------------
+Timestamp: 2026-02-18T14:46:15
+Mode: normal
+Work Order #: testing
+Part #: testing
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+Hypot Result: 01,ACW,PASS,1.24,2.330,2.0
+Measurement Result: LP1to6: 9.6 | LP2to5:  | LP3to4:  | RP1to6: 9.6 | RP2to5:  | RP3to4:
+Overall: PASS
+------------------------------------------------------------

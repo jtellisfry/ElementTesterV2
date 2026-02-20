@@ -1,0 +1,37 @@
+======================================================================
+ELEMENT TESTER - TEST SESSION LOG
+======================================================================
+Session ID:    ET_ELOV0009
+Start Time:    2026-02-19 15:11:14
+Work Order:    testing
+Part Number:   testing
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+----------------------------------------------------------------------
+
+[15:11:29] MEASUREMENT TEST - Attempt #1
+    Result: PASS
+    Message: All measurements within limits
+    Pin Readings:
+        Pin 1 to 6 (L): 9.7
+        Pin 2 to 5 (L): 9.6
+        Pin 3 to 4 (L): 9.4
+        Pin 1 to 6 (R): 9.7
+        Pin 2 to 5 (R): 9.6
+        Pin 3 to 4 (R): 9.4
+
+[15:11:39] HIPOT TEST - Attempt #1
+    Result: FAIL
+    Message: 01,ACW,ARC-Fail,1.24,2.299,0.1
+    Raw: 01,ACW,ARC-Fail,1.24,2.299,0.1
+
+----------------------------------------------------------------------
+SESSION SUMMARY
+----------------------------------------------------------------------
+End Time:      2026-02-19 15:13:09
+Duration:      115.7 seconds
+Hipot Attempts:       1
+Measurement Attempts: 1
+
+FINAL RESULT: FAIL
+Notes: Mode: normal | Hipot failed: 01,ACW,ARC-Fail,1.24,2.299,0.1 (operator cancelled)
+======================================================================
