@@ -7,22 +7,25 @@ This will be a program for the Frymaster Element Tester to test the high potenti
 
 ## Installing and deploying this program
 - Install python version 3.13
-- Go to this location in your command prompt or open it in your coding environment (VSCode, etc.) and find it in your File Explorer
-  - cd "C:\Files\element tester\Element_Tester"
-- When installing on a fresh computer there should NOT be a ".venv" folder at the top and if there is then delete it
-  - Reinitialize it with "python -m venv .venv" in the terminal
-  - Then you will have to install the requirements.txt file with the command "pip install -r requirements.txt"
-- BELOW shows you have to rebuild or do the initial build for the executable version of the program
-  - If you want to bring it to the desktop, simply create a shortcut and put it on the desktop, do not remove the main file
-
-## If you are trying to rebuild a new executable file (.exe file) after changing something use this process
-- Step 1: Open command prompt or powershell
-- Step 2: Run this command --> cd "C:\Files\element tester\Element_Tester"
-- Step 3: Activate the virtual environment with these commands in that order and you should see a (.venv) appear in front of the location you cd into -->
-  - SetExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-  - ".\.venv\Scripts\Activate.ps1"
-- Step 4: Run this command --> python build_application.py
-  - This should build and overrite the previous version of the application
+- Go to this location (L:\Test Engineering\Tester Information\ElementTesterV2(Python)) and move the files in the dist folder (under the proper Element Tester version) into the main folder
+  - The folder structure on the local machine should be
+    - ElementTesterV2
+      - main (folder)
+      - backup (folder)
+      - data (folder)
+- Make sure anything involving a com port is configured correctly
+  - Hypot3865 = COM 6
+  - Fluke287 = COM 11
+## If you are trying to rebuild a new executable file (.exe file) after changing something in the code use this process
+- Step 1: Create the next version in the "backup" folder on the local machine
+- Step 2: Move the current version from "main" into this new "backup" folder location
+- Step 3: Go into a powershell terminal and cd into this location "L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2"
+- Step 4: Enter in these prompts in the terminal
+  - Prompt 1: set-executionpolicy -scope process -executionpolicy bypass
+  - Prompt 2: .\.venv\scripts\activate.ps1
+  - Prompt 3: python build_application.py
+- Step 5: Move all of the newly created files inside the "dist" folder in the location previously mentioned into the "main" folder on the local machine
+  - If you don't move all the files and folders inside the "dist" folder then the program will not work on the local machine
 
 
 
