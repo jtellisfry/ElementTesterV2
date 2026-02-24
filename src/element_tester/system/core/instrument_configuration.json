@@ -1,6 +1,6 @@
 {
     "relay_driver": "MCC_ERB",
-    "meter_driver": "UT61E",
+    "meter_driver": "FLUKE287",
     "erb08_board_num": 0,
     "erb08_port_low": 12,
     "erb08_port_high": 13,

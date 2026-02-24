@@ -2,11 +2,11 @@
 
 
 a = Analysis(
-    ['C:\\Files\\ElementTester\\ElementTesterV2\\src\\element_tester\\system\\core\\test_runner.py'],
+    ['\\\\fryfs001v\\eng\\DEPTS\\LAB\\Test Engineering\\Tester Information\\ElementTesterV2(Python)\\ElementTesterV2\\src\\element_tester\\system\\core\\test_runner.py'],
     pathex=[],
     binaries=[],
     datas=[],
-    hiddenimports=[],
+    hiddenimports=['element_tester.programs.hipot_test', 'element_tester.programs.hipot_test.test_1_hypot', 'element_tester.programs.measurement_test', 'element_tester.programs.measurement_test.test_1_pin1to6', 'element_tester.programs.measurement_test.test_2_pin2to5', 'element_tester.programs.measurement_test.test_3_pin3to4', 'element_tester.programs.simulate_test'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

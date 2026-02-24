@@ -16,7 +16,7 @@ class ContinueRetryExitDialog(QtWidgets.QDialog):
     
     # Return values for the dialog
     CONTINUE = "CONTINUE"
-    RETRY = "RETRY"
+    RETRY = "RETRY HYPOT"
     EXIT = "EXIT"
     
     def __init__(self, parent=None, title: str = "Hipot Test Result", message: str = ""):
@@ -101,7 +101,7 @@ class ContinueRetryExitDialog(QtWidgets.QDialog):
         continue_btn.clicked.connect(self._on_continue)
         
         # Retry button (orange/yellow) - #dea21c from reference
-        retry_btn = QtWidgets.QPushButton("RETRY")
+        retry_btn = QtWidgets.QPushButton("RETRY HYPOT")
         retry_btn.setFixedSize(220, 140)
         retry_btn.setCursor(QtGui.QCursor(Qt.CursorShape.PointingHandCursor))
         retry_btn.setStyleSheet("""

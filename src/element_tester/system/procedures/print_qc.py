@@ -16,16 +16,21 @@ import time
 import threading
 from typing import Optional
 
+from .system_info import get_computer_name
+
 # Path to write QC ticket. Change if desired.
 qc_file_location = r"C:\Files\element tester\Element_Tester\assets\QCTicket.txt"
+
+# Secondary/fallback path for L: drive (network/shortcut deployment)
+qc_file_location_secondary = r"L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt"
 
 # Default printer name for QC labels.
 qc_printer_name = "Brother PT-P700"
 
 # Default message template. Callers may pass a custom `message` or rely on
 # this template which will be formatted with `workorder`, `partnumber`, 
-# `timestamp`, and `serialnumber`.
-qc_message = "PASSED\nWO:{workorder}\nPN:{partnumber}\nTS: {timestamp}\nSN: {serialnumber}"
+# `timestamp`, `serialnumber`, and `computername`.
+qc_message = "PASSED  {computername}\nWO:{workorder}\nPN:{partnumber}\nTS: {timestamp}\nSN: {serialnumber}"
 
 
 def _get_default_printer_ctypes() -> str:
@@ -211,7 +216,17 @@ def print_message(
     (ctypes) before calling `os.startfile(..., 'print')` and restore the
     original default afterwards. If not provided, uses module-level `qc_printer_name`.
     """
-    path = file_path or qc_file_location
+    # Determine file path: use provided path, or try primary then secondary location
+    if file_path:
+        path = file_path
+    else:
+        # Check if primary path's parent directory exists, otherwise use secondary
+        primary_parent = os.path.dirname(qc_file_location)
+        if os.path.exists(primary_parent):
+            path = qc_file_location
+        else:
+            path = qc_file_location_secondary
+    
     printer = printer_name or qc_printer_name
     now = time.strftime("%Y-%m-%d")
     
@@ -227,15 +242,24 @@ def print_message(
             pass
     if sn is None:
         sn = "N/A"
+
+    computer_name = get_computer_name()
     
     if message is None:
-        text = qc_message.format(workorder=workorder, partnumber=partnumber, timestamp=now, serialnumber=sn)
+        text = qc_message.format(
+            workorder=workorder,
+            partnumber=partnumber,
+            timestamp=now,
+            serialnumber=sn,
+            computername=computer_name,
+        )
     else:
         text = (message
                 .replace("{workorder}", workorder)
                 .replace("{partnumber}", partnumber)
                 .replace("{timestamp}", now)
-                .replace("{serialnumber}", sn))
+                .replace("{serialnumber}", sn)
+                .replace("{computername}", computer_name))
 
     # Debug log file to diagnose PyInstaller print issues
     import sys

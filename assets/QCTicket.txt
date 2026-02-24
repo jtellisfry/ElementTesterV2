@@ -1,4 +1,4 @@
-PASSED
+PASSED {computer_name}
 WO:testing
 PN:testing
 TS: 2026-01-09

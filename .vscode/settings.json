@@ -8,5 +8,7 @@
   // Ensure the language server and import resolver look in ./src
   "python.analysis.extraPaths": [
     "./src"
-  ]
+  ],
+  "python-envs.defaultEnvManager": "ms-python.python:venv",
+  "python-envs.pythonProjects": []
 }

@@ -20,10 +20,12 @@ import json
 import logging
 import re
 
+from .system_info import get_computer_name
+
 log = logging.getLogger("element_tester.result_logging")
 
 # Secondary log location (network share for backup/archival)
-SECONDARY_LOG_PATH = Path(r"I:\AssemblyTester\ElementTester\TestLog")
+SECONDARY_LOG_PATH = Path(r"L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\data")
 
 # Module-level session state
 _current_session: "TestSession | None" = None
@@ -74,6 +76,7 @@ class TestSession:
         header_lines.append("=" * 70 + "\n")
         header_lines.append(f"Session ID:    {self.filename.replace('.txt', '')}\n")
         header_lines.append(f"Start Time:    {self.start_time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+        header_lines.append(f"Computer:      {get_computer_name()}\n")
         header_lines.append(f"Work Order:    {self.work_order}\n")
         header_lines.append(f"Part Number:   {self.part_number}\n")
         if self.configuration:

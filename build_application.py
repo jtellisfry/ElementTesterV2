@@ -13,6 +13,21 @@ def build_element_tester():
         print(f"Error: {script_path} does not exist.")
         sys.exit(1)
 
+    # Hidden imports for dynamically discovered test modules
+    # PyInstaller can't detect these since they're loaded via pkgutil at runtime
+    hidden_imports = [
+        # Hipot test modules
+        "element_tester.programs.hipot_test",
+        "element_tester.programs.hipot_test.test_1_hypot",
+        # Measurement test modules
+        "element_tester.programs.measurement_test",
+        "element_tester.programs.measurement_test.test_1_pin1to6",
+        "element_tester.programs.measurement_test.test_2_pin2to5",
+        "element_tester.programs.measurement_test.test_3_pin3to4",
+        # Simulate test modules (if any)
+        "element_tester.programs.simulate_test",
+    ]
+
     pyinstaller_args = [
         "pyinstaller",
         "--clean",
@@ -20,8 +35,13 @@ def build_element_tester():
         "--onedir",
         "--windowed",
         "--name", "ElementTesterV2",
-        str(script_path)
     ]
+    
+    # Add hidden imports
+    for hidden in hidden_imports:
+        pyinstaller_args.extend(["--hidden-import", hidden])
+    
+    pyinstaller_args.append(str(script_path))
 
     print("Running PyInstaller with arguments:")
     print(" ".join(pyinstaller_args))

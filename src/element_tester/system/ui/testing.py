@@ -412,6 +412,33 @@ class MainTestWindow(QtWidgets.QWidget):
             """
         lab.setStyleSheet(style)
 
+    def reset_for_full_retry(self, clear_logs: bool = True):
+        """
+        Reset testing view before restarting the full test sequence.
+
+        - Resets hipot status styling/message to READY
+        - Clears/neutralizes all measurement rows (text + color)
+        - Optionally clears hypot/measurement logs
+        """
+        self.set_hypot_state("ready", "READY")
+
+        defaults = ["Pin 1 to 6: ---", "Pin 2 to 5: ---", "Pin 3 to 4: ---"]
+        for idx, text in enumerate(defaults):
+            self.update_measurement("L", idx, text, None)
+            self.update_measurement("R", idx, text, None)
+
+        if clear_logs:
+            try:
+                self.hypot_log.clear()
+            except Exception:
+                pass
+            try:
+                self.measurement_log.clear()
+            except Exception:
+                pass
+
+        QtWidgets.QApplication.processEvents()
+
     # ---------------- NEW: connection confirmation API ----------------
     def confirm_ready_to_test(self) -> bool:
         """

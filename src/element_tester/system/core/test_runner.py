@@ -1,12 +1,12 @@
 from __future__ import annotations
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Callable, cast
 from pathlib import Path
 import logging
 import time
-import json
-from datetime import datetime
 import sys
-import concurrent.futures
+import importlib
+import pkgutil
+import re
 
 
 # Make sure .../src is on sys.path so `element_tester` is importable
@@ -49,20 +49,6 @@ except Exception as e:
     logging.getLogger("element_tester.runner").error(f"Failed to import PDIS08Driver: {e}", exc_info=True)
     PDIS08Driver = None
 
-# Optional hipot test sequence
-try:
-    from element_tester.programs.hipot_test.test import HipotTestSequence
-except Exception as e:
-    logging.getLogger("element_tester.runner").error(f"Failed to import HipotTestSequence: {e}", exc_info=True)
-    HipotTestSequence = None
-
-# Optional measurement test sequence
-try:
-    from element_tester.programs.measurement_test.test import MeasurementTestSequence
-except Exception as e:
-    logging.getLogger("element_tester.runner").error(f"Failed to import MeasurementTestSequence: {e}", exc_info=True)
-    MeasurementTestSequence = None
-
 # Continue/Exit dialog widget
 try:
     from element_tester.system.widgets.continue_exit import ContinueExitDialog
@@ -96,13 +82,6 @@ try:
 except Exception as e:
     logging.getLogger("element_tester.runner").error(f"Failed to import UT61EDriver: {e}", exc_info=True)
     UT61EDriver = None
-
-# Optional measurement procedures
-try:
-    import element_tester.system.procedures.measurement_test_procedures as meas_procs
-except Exception as e:
-    logging.getLogger("element_tester.runner").error(f"Failed to import measurement_test_procedures: {e}", exc_info=True)
-    meas_procs = None
 
 # Optional print helper for QC stickers (module-level import)
 try:
@@ -180,11 +159,17 @@ class TestRunner:
         # Initialize drivers
         self.hipot_driver = None
         self.relay_driver = None
-        self.hipot_test_seq = None
         self.meter_driver = None
-        self.measurement_test_seq = None
         
-        self.log.info(f"TestRunner.__init__ | simulate={simulate} | ERB08Driver={ERB08Driver is not None} | PDIS08Driver={PDIS08Driver is not None} | AR3865Driver={AR3865Driver is not None} | HipotTestSequence={HipotTestSequence is not None} | Fluke287Driver={Fluke287Driver is not None} | UT61EDriver={UT61EDriver is not None} | MeasurementTestSequence={MeasurementTestSequence is not None}")
+        self.log.info(
+            "TestRunner.__init__ | simulate=%s | ERB08Driver=%s | PDIS08Driver=%s | AR3865Driver=%s | Fluke287Driver=%s | UT61EDriver=%s",
+            simulate,
+            ERB08Driver is not None,
+            PDIS08Driver is not None,
+            AR3865Driver is not None,
+            Fluke287Driver is not None,
+            UT61EDriver is not None,
+        )
         
         if not simulate:
             # Initialize relay driver based on config file
@@ -248,23 +233,6 @@ class TestRunner:
             else:
                 self.log.error("✗ AR3865Driver not available (import failed)")
             
-            # Create hipot test sequence if both drivers available
-            # For hipot test sequence use the PDIS relay driver if available,
-            # otherwise fall back to the ERB relay driver.
-            # Create HipotTestSequence using the ERB relay driver only.
-            if self.relay_driver and self.hipot_driver and HipotTestSequence:
-                try:
-                    self.hipot_test_seq = HipotTestSequence(
-                        relay_driver=self.relay_driver,
-                        hipot_driver=self.hipot_driver,
-                        logger=self.log
-                    )
-                    self.log.info("✓ HipotTestSequence initialized - REAL HARDWARE MODE ACTIVE (PDIS logic removed)")
-                except Exception as e:
-                    self.log.error(f"✗ Failed to create HipotTestSequence: {e}", exc_info=True)
-            else:
-                self.log.error(f"✗ Cannot create HipotTestSequence - relay={self.relay_driver is not None}, hipot={self.hipot_driver is not None}, seq_class={HipotTestSequence is not None}")
-            
             # Initialize meter driver based on config file
             meter_choice = "FLUKE287"  # Default
             meter_params = None
@@ -315,20 +283,7 @@ class TestRunner:
                 else:
                     self.log.error("✗ UT61EDriver not available (import failed)")
             
-            # Create measurement test sequence if both drivers available
-            if self.relay_driver and self.meter_driver and MeasurementTestSequence:
-                try:
-                    self.measurement_test_seq = MeasurementTestSequence(
-                        relay_driver=self.relay_driver,
-                        meter_driver=self.meter_driver,
-                        logger=self.log,
-                        simulate=simulate
-                    )
-                    self.log.info("✓ MeasurementTestSequence initialized - REAL HARDWARE MODE ACTIVE")
-                except Exception as e:
-                    self.log.error(f"✗ Failed to create MeasurementTestSequence: {e}", exc_info=True)
-            else:
-                self.log.error(f"✗ Cannot create MeasurementTestSequence - relay={self.relay_driver is not None}, meter={self.meter_driver is not None}, seq_class={MeasurementTestSequence is not None}")
+            self.log.info("Test modules will be discovered at runtime from programs/*/test_<order>_*.py")
         else:
             self.log.info("TestRunner using SIMULATE mode (simulate=True in __init__)")
 
@@ -345,13 +300,12 @@ class TestRunner:
             except Exception as e:
                 self.log.error(f"Failed to open relays during reset: {e}", exc_info=True)
         
-        # Reset hipot instrument (if available and has reset method)
+        # Reset hipot instrument when available
         if self.hipot_driver:
             try:
                 self.log.info("Resetting hardware: Resetting hipot instrument")
-                # Most hipot instruments don't need explicit reset, but we can ensure relays are open
-                if self.hipot_test_seq and hasattr(self.hipot_test_seq, 'open_relay'):
-                    self.hipot_test_seq.open_relay()
+                if hasattr(self.hipot_driver, "reset"):
+                    self.hipot_driver.reset()
             except Exception as e:
                 self.log.error(f"Failed to reset hipot during cleanup: {e}", exc_info=True)
         
@@ -380,6 +334,80 @@ class TestRunner:
         except Exception:
             pass
         return 1
+
+    # Fallback module lists for PyInstaller frozen environments
+    # pkgutil.iter_modules() doesn't work reliably in frozen apps, so we
+    # maintain explicit lists of test modules that get bundled.
+    _FROZEN_HIPOT_MODULES = [
+        "element_tester.programs.hipot_test.test_1_hypot",
+    ]
+    _FROZEN_MEASUREMENT_MODULES = [
+        "element_tester.programs.measurement_test.test_1_pin1to6",
+        "element_tester.programs.measurement_test.test_2_pin2to5",
+        "element_tester.programs.measurement_test.test_3_pin3to4",
+    ]
+
+    def _discover_numbered_test_modules(self, package_name: str) -> list[str]:
+        """
+        Discover package modules named test_<order>_<name>.py and return fully
+        qualified module names sorted by <order> then module name.
+        
+        When running in a PyInstaller frozen environment, falls back to a
+        predefined list since pkgutil.iter_modules() doesn't work reliably.
+        """
+        # Check if running in PyInstaller frozen environment
+        is_frozen = getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS')
+        
+        try:
+            package = importlib.import_module(package_name)
+        except Exception as e:
+            self.log.error(f"Failed to import package {package_name}: {e}", exc_info=True)
+            return []
+
+        package_paths = getattr(package, "__path__", None)
+        
+        # Try normal discovery first
+        numbered: list[tuple[int, str]] = []
+        if package_paths:
+            for mod in pkgutil.iter_modules(package_paths):
+                name = mod.name
+                match = re.match(r"^test_(\d+)_", name)
+                if not match:
+                    continue
+                order = int(match.group(1))
+                numbered.append((order, name))
+        
+        # If no modules found and we're frozen, use fallback lists
+        if not numbered and is_frozen:
+            self.log.info(f"Using frozen fallback module list for {package_name}")
+            if "hipot_test" in package_name:
+                return self._FROZEN_HIPOT_MODULES
+            elif "measurement_test" in package_name:
+                return self._FROZEN_MEASUREMENT_MODULES
+        
+        # If still no modules found, log warning
+        if not numbered:
+            self.log.warning(f"Package {package_name} has no __path__ or no test modules discovered")
+            return []
+
+        numbered.sort(key=lambda item: (item[0], item[1]))
+        return [f"{package_name}.{name}" for _, name in numbered]
+
+    def _load_test_callable(
+        self,
+        module_name: str,
+    ) -> Optional[Callable[[dict[str, object], dict[str, object], logging.Logger], object]]:
+        """Load module and return its run_test callable if available."""
+        try:
+            module = importlib.import_module(module_name)
+            run_test = getattr(module, "run_test", None)
+            if callable(run_test):
+                return run_test
+            self.log.error(f"Module {module_name} does not expose callable run_test")
+            return None
+        except Exception as e:
+            self.log.error(f"Failed to load test module {module_name}: {e}", exc_info=True)
+            return None
 
     # --------------- PUBLIC ENTRY ---------------
     def run_full_sequence(
@@ -490,162 +518,139 @@ class TestRunner:
                 msg = "Operator cancelled before starting tests"
                 return False, msg, {"passed": False, "message": msg}, {}
 
-        # Initialize hipot_detail for error handling (hipot test should run here)
+        # Full-sequence retry logic: ANY failure restarts from beginning
         hip_detail = {"passed": False, "message": "Hipot test not run", "raw_result": None}
-        hip_ok = False
-        hip_msg = "Hipot test not run"
-
-        # Measurement test with unlimited retry logic ---------------------------------------------
-        meas_ok = False
-        meas_msg = ""
         meas_detail = {}
-        attempt = 0
-        
-        while True:  # Unlimited retries until pass or operator exits
-            if attempt > 0:
-                self.log.info(f"MEASUREMENT retry attempt {attempt + 1}")
-                # Clear previous measurement values on retry
-                ui.update_measurement("L", 0, "Pin 1 to 6: ---", None)
-                ui.update_measurement("L", 1, "Pin 2 to 5: ---", None)
-                ui.update_measurement("L", 2, "Pin 3 to 4: ---", None)
-                ui.update_measurement("R", 0, "Pin 1 to 6: ---", None)
-                ui.update_measurement("R", 1, "Pin 2 to 5: ---", None)
-                ui.update_measurement("R", 2, "Pin 3 to 4: ---", None)
-                QtWidgets.QApplication.processEvents()
+        cycle_attempt = 0
+
+        while True:
+            if cycle_attempt > 0:
+                self.log.info(f"FULL TEST retry attempt {cycle_attempt + 1}")
                 try:
-                    ui.append_measurement_log(f"--- Retry Attempt {attempt + 1} ---")
+                    if hasattr(ui, "reset_for_full_retry"):
+                        ui.reset_for_full_retry(clear_logs=True)
+                    else:
+                        ui.update_measurement("L", 0, "Pin 1 to 6: ---", None)
+                        ui.update_measurement("L", 1, "Pin 2 to 5: ---", None)
+                        ui.update_measurement("L", 2, "Pin 3 to 4: ---", None)
+                        ui.update_measurement("R", 0, "Pin 1 to 6: ---", None)
+                        ui.update_measurement("R", 1, "Pin 2 to 5: ---", None)
+                        ui.update_measurement("R", 2, "Pin 3 to 4: ---", None)
+                        QtWidgets.QApplication.processEvents()
                 except Exception:
-                    ui.append_hypot_log(f"--- Measurement Retry Attempt {attempt + 1} ---")
+                    QtWidgets.QApplication.processEvents()
+                try:
+                    ui.append_measurement_log(f"--- Full Sequence Retry Attempt {cycle_attempt + 1} ---")
+                except Exception:
+                    ui.append_hypot_log(f"--- Full Sequence Retry Attempt {cycle_attempt + 1} ---")
                 QtWidgets.QApplication.processEvents()
-            
+                self._reset_hardware()
+                QtWidgets.QApplication.processEvents()
+
             meas_ok, meas_msg, meas_detail = self.run_measuring(ui, wo, pn)
-            
-            # Log this measurement attempt to the session file
             log_measurement_result(
                 passed=meas_ok,
                 message=meas_msg,
                 values=meas_detail.get("values") if meas_detail else None,
             )
-            
-            if meas_ok:
-                break  # Success, exit retry loop and complete
-            else:
-                # Test failed - ask operator if they want to retry using Continue/Exit dialog
+
+            if not meas_ok:
+                restart_all = False
                 if ContinueExitDialog:
-                    if not ContinueExitDialog.show_prompt(
+                    restart_all = ContinueExitDialog.show_prompt(
                         parent=ui,
                         title="Measurement Test Failed",
-                        message=f"Test failed: {meas_msg}\n\nPress CONTINUE to retry or EXIT to cancel."
-                    ):
-                        # Operator chose to exit - reset hardware and return to scanning
-                        self._reset_hardware()
-                        if hasattr(self, '_return_to_scan_callback') and self._return_to_scan_callback:
-                            self._return_to_scan_callback()
-                        if hasattr(ui, 'close'):
-                            ui.close()
-                        
-                        return False, f"Measuring failed: {meas_msg} (operator cancelled)", hip_detail, meas_detail
+                        message=(
+                            f"Test failed: {meas_msg}\n\n"
+                            "Press CONTINUE to restart the FULL test sequence from the beginning, "
+                            "or EXIT to cancel."
+                        ),
+                    )
                 else:
-                    # Fallback if widget not available
-                    if not ui.confirm_retry_test("Measurement", meas_msg):
-                        return False, f"Measuring failed: {meas_msg} (operator cancelled)", hip_detail, meas_detail
-                # If continue, loop will retry
-            
-            attempt += 1
+                    restart_all = ui.confirm_retry_test("Measurement", meas_msg)
 
-
-        # Hipot test with unlimited retry logic ---------------------------------------------
-        hip_ok = False
-        hip_msg = ""
-        hip_detail = {}
-        attempt = 0
-        
-        while True:  # Unlimited retries until pass or operator exits
-            if attempt > 0:
-                self.log.info(f"HIPOT retry attempt {attempt + 1}")
-                ui.append_hypot_log(f"--- Retry Attempt {attempt + 1} ---")
-                QtWidgets.QApplication.processEvents()
-            
-            # Always keep relay closed during retries (only open when operator exits)
-            hip_ok, hip_msg, hip_detail = self.run_hipot(ui, wo, pn, simulate_for_run, keep_relay_closed=True)
-            
-            # Log this hipot attempt to the session file
-            log_hipot_result(
-                passed=hip_ok,
-                message=hip_msg,
-                raw_result=hip_detail.get("raw_result") if hip_detail else None,
-            )
-            
-            # Always show the Continue/Retry/Exit dialog after every test attempt
-            # (regardless of pass/fail) - operator controls what happens next
-            if ContinueRetryExitDialog:
-                if hip_ok:
-                    dialog_title = "Hipot Test Passed"
-                    dialog_message = f"Hipot test passed!\n\nPress CONTINUE to proceed to measurements, RETRY to re-test, or EXIT to cancel."
-                else:
-                    dialog_title = "Hipot Test Failed"
-                    dialog_message = f"Test failed: {hip_msg}\n\nPress CONTINUE to re-test (passes on success), RETRY to re-test (returns to this dialog), or EXIT to cancel."
-                
-                result = ContinueRetryExitDialog.show_prompt(
-                    parent=ui,
-                    title=dialog_title,
-                    message=dialog_message
-                )
-                
-                if result == ContinueRetryExitDialog.RETRY:
-                    # Operator chose to retry - run test again and return to this dialog
-                    # regardless of pass or fail
-                    self.log.info(f"Hipot test - operator pressed RETRY - re-running test")
-                    attempt += 1
-                    continue  # Loop will retry and show dialog again
-                elif result == ContinueRetryExitDialog.CONTINUE:
-                    if hip_ok:
-                        # Test passed and operator chose to continue - proceed to measurements
-                        self.log.info(f"Hipot test passed, operator pressed CONTINUE - proceeding to measurements")
-                        break  # Exit loop and continue to measurements
-                    else:
-                        # Test failed and operator chose to continue - retry, and if it passes, proceed
-                        self.log.info(f"Hipot test failed, operator pressed CONTINUE - will retry and proceed if passes")
-                        attempt += 1
-                        # Re-run the hipot test
-                        if attempt > 0:
-                            ui.append_hypot_log(f"--- Retry Attempt {attempt + 1} (Continue mode) ---")
-                            QtWidgets.QApplication.processEvents()
-                        hip_ok, hip_msg, hip_detail = self.run_hipot(ui, wo, pn, simulate_for_run, keep_relay_closed=True)
-                        log_hipot_result(
-                            passed=hip_ok,
-                            message=hip_msg,
-                            raw_result=hip_detail.get("raw_result") if hip_detail else None,
-                        )
-                        if hip_ok:
-                            # Test passed - proceed to measurements
-                            self.log.info(f"Hipot test passed on CONTINUE retry - proceeding to measurements")
-                            break
-                        else:
-                            # Test failed again - show dialog again
-                            self.log.info(f"Hipot test failed on CONTINUE retry - showing dialog again")
-                            continue
-                else:  # EXIT
-                    # Operator chose to exit - reset hardware and return to scanning
+                if not restart_all:
                     self._reset_hardware()
                     if hasattr(self, '_return_to_scan_callback') and self._return_to_scan_callback:
                         self._return_to_scan_callback()
                     if hasattr(ui, 'close'):
                         ui.close()
-                    
-                    return False, f"Hipot failed: {hip_msg} (operator cancelled)", hip_detail, {}
-            else:
-                # Fallback if widget not available - use old behavior
-                if hip_ok:
-                    break  # Success, exit retry loop and continue to measurements
-                if not ui.confirm_retry_test("Hipot", hip_msg):
-                    if self.hipot_test_seq:
-                        try:
-                            self.hipot_test_seq.open_relay()
-                        except Exception:
-                            pass
-                    return False, f"Hipot failed: {hip_msg} (operator cancelled)", hip_detail, {}
-                attempt += 1  # Only increment for fallback path
+                    return False, f"Measuring failed: {meas_msg} (operator cancelled)", hip_detail, meas_detail
+
+                cycle_attempt += 1
+                continue
+
+            hip_ok, hip_msg, hip_detail = self.run_hipot(
+                ui,
+                wo,
+                pn,
+                simulate_for_run,
+                keep_relay_closed=False,
+            )
+            log_hipot_result(
+                passed=hip_ok,
+                message=hip_msg,
+                raw_result=hip_detail.get("raw_result") if hip_detail else None,
+            )
+
+            if not hip_ok:
+                if ContinueRetryExitDialog:
+                    while True:
+                        result = ContinueRetryExitDialog.show_prompt(
+                            parent=ui,
+                            title="Hipot Test Failed",
+                            message=(
+                                f"Test failed: {hip_msg}\n\n"
+                                "Press RETRY to re-run HIPOT only for troubleshooting, "
+                                "CONTINUE to restart the FULL test sequence, or EXIT to cancel."
+                            ),
+                        )
+
+                        if result == ContinueRetryExitDialog.RETRY:
+                            ui.append_hypot_log("--- Hipot Troubleshoot Retry ---")
+                            QtWidgets.QApplication.processEvents()
+                            hip_ok, hip_msg, hip_detail = self.run_hipot(
+                                ui,
+                                wo,
+                                pn,
+                                simulate_for_run,
+                                keep_relay_closed=False,
+                            )
+                            log_hipot_result(
+                                passed=hip_ok,
+                                message=hip_msg,
+                                raw_result=hip_detail.get("raw_result") if hip_detail else None,
+                            )
+                            # Stay in dialog mode regardless of pass/fail until CONTINUE or EXIT.
+                            continue
+
+                        if result == ContinueRetryExitDialog.CONTINUE:
+                            cycle_attempt += 1
+                            break
+
+                        # EXIT
+                        self._reset_hardware()
+                        if hasattr(self, '_return_to_scan_callback') and self._return_to_scan_callback:
+                            self._return_to_scan_callback()
+                        if hasattr(ui, 'close'):
+                            ui.close()
+                        return False, f"Hipot failed: {hip_msg} (operator cancelled)", hip_detail, meas_detail
+
+                    continue
+
+                restart_all = ui.confirm_retry_test("Hipot", hip_msg)
+                if not restart_all:
+                    self._reset_hardware()
+                    if hasattr(self, '_return_to_scan_callback') and self._return_to_scan_callback:
+                        self._return_to_scan_callback()
+                    if hasattr(ui, 'close'):
+                        ui.close()
+                    return False, f"Hipot failed: {hip_msg} (operator cancelled)", hip_detail, meas_detail
+
+                cycle_attempt += 1
+                continue
+
+            break
 
         
         # Both tests passed - show success dialog. Schedule QC printing from the
@@ -765,7 +770,7 @@ class TestRunner:
     ) -> Tuple[bool, str, dict]:
         """
         Run the Hipot portion of the test and update the UI.
-        Uses HipotTestSequence which handles relay closure + hipot test.
+        Executes numbered test modules in programs/hipot_test.
         Returns (passed, message, detail_dict).
         """
         self.log.info(f"HIPOT start | WO={work_order} | PN={part_number}")
@@ -806,7 +811,7 @@ class TestRunner:
             time.sleep(0.8)
             passed = True
             msg = "Simulated Hipot PASS"
-        elif self.hipot_test_seq is None:
+        elif self.hipot_driver is None or self.relay_driver is None:
             # Hardware not available - show error
             error_msg = "Hipot hardware not available!\n\n"
             if self.hipot_driver is None:
@@ -824,32 +829,49 @@ class TestRunner:
             passed = False
             msg = "Hipot hardware not available"
         else:
-            # Real hardware test using HipotTestSequence
+            # Real hardware test using ordered numbered modules
             try:
                 ui.append_hypot_log("Step 1/5: Reset instrument")
                 QtWidgets.QApplication.processEvents()
-                # Run the full hipot test sequence (handles relay + hipot)
-                # Default: 1500V, 5mA trip, 1s ramp, 1s dwell, 0.5s fall
                 ui.append_hypot_log("Step 2/5: Configure relay (closing relay 8)")
                 QtWidgets.QApplication.processEvents()
                 ui.append_hypot_log("Step 3/5: Configure hipot test")
                 QtWidgets.QApplication.processEvents()
                 ui.append_hypot_log("Step 4/5: Execute hipot test")
                 QtWidgets.QApplication.processEvents()
-                
-                # TIMING CONFIGURATION FOR RESET
+
                 HIPOT_TEST_DURATION = 4.0  # Expected test duration in seconds
                 RESET_DELAY_AFTER_RESULT = 3.0  # Delay after result for operator awareness
-
-                # Determine which FL to run based on operator configuration
                 file_index = self._select_hypot_file_index(work_order, part_number)
-                passed, msg = self.hipot_test_seq.run_test(
-                    keep_relay_closed=keep_relay_closed,
-                    reset_after_test=True,
-                    total_test_duration_s=HIPOT_TEST_DURATION,
-                    reset_delay_after_result_s=RESET_DELAY_AFTER_RESULT,
-                    file_index=file_index
-                )
+
+                module_names = self._discover_numbered_test_modules("element_tester.programs.hipot_test")
+                if not module_names:
+                    raise RuntimeError("No numbered hipot tests found in programs/hipot_test")
+
+                passed = True
+                msg = "PASS"
+                drivers = {
+                    "relay_driver": self.relay_driver,
+                    "hipot_driver": self.hipot_driver,
+                }
+                config = {
+                    "file_index": file_index,
+                    "keep_relay_closed": keep_relay_closed,
+                    "reset_after_test": True,
+                    "total_test_duration_s": HIPOT_TEST_DURATION,
+                    "reset_delay_after_result_s": RESET_DELAY_AFTER_RESULT,
+                }
+
+                for module_name in module_names:
+                    run_test = self._load_test_callable(module_name)
+                    if run_test is None:
+                        raise RuntimeError(f"Invalid test module: {module_name}")
+                    test_result = cast(tuple[bool, str], run_test(drivers, config, self.log))
+                    test_passed, raw_result = test_result
+                    passed = bool(test_passed)
+                    msg = str(raw_result)
+                    if not passed:
+                        break
                 
                 ui.append_hypot_log("Step 5/5: Disable relay (all relays OFF)")
                 QtWidgets.QApplication.processEvents()
@@ -882,17 +904,11 @@ class TestRunner:
     ) -> Tuple[bool, str, dict]:
         """
         Run the measuring portion using real meter readings.
-        Measures resistance for Pin 1to6, Pin 2to5, and Pin 3to4.
+        Executes numbered measurement tests from programs/measurement_test.
         """
         self.log.info(f"MEAS start | WO={work_order} | PN={part_number}")
 
-        # Check if we have measurement test sequence
-        use_real_measurement = (self.measurement_test_seq is not None and not self.simulate)
-        
-        if self.simulate:
-            # Explicitly in simulate mode
-            use_real_measurement = False
-        elif self.measurement_test_seq is None:
+        if not self.simulate and (self.meter_driver is None or self.relay_driver is None):
             # Hardware not available - show error
             error_msg = "Measurement hardware not available!\n\n"
             if self.meter_driver is None:
@@ -916,59 +932,11 @@ class TestRunner:
                 "values": {},
             }
             return False, "Measurement hardware not available", detail
-        
-        if use_real_measurement:
-            self.log.info("MEAS: Using REAL HARDWARE via MeasurementTestSequence")
-            
-            # Get resistance range from configuration
-            resistance_range = None
-            cfg = getattr(self, "_selected_config", None)
-            if cfg and isinstance(cfg, dict):
-                rr = cfg.get("resistance_range")
-                if isinstance(rr, (list, tuple)) and len(rr) == 2:
-                    try:
-                        resistance_range = (float(rr[0]), float(rr[1]))
-                    except Exception:
-                        pass
-            
-            # If no range from config, try to get from ConfigurationWindow mapping
-            if resistance_range is None or resistance_range == (0.0, 0.0):
-                try:
-                    from element_tester.system.ui.configuration_ui import ConfigurationWindow
-                    key = None
-                    if cfg and isinstance(cfg, dict) and cfg.get("voltage") and cfg.get("wattage"):
-                        key = (int(cfg.get("voltage")), int(cfg.get("wattage")))
-                    # Fallback to (208, 7000) if not set
-                    if key is None or key not in ConfigurationWindow.RESISTANCE_RANGE:
-                        key = (208, 7000)
-                    if key in ConfigurationWindow.RESISTANCE_RANGE:
-                        resistance_range = ConfigurationWindow.RESISTANCE_RANGE[key]
-                        # Log the expected resistance
-                        try:
-                            ui.append_measurement_log(f"Expected resistance for {key[0]}V/{key[1]}W: {resistance_range[0]:.1f} - {resistance_range[1]:.1f} Ω")
-                        except Exception:
-                            ui.append_hypot_log(f"Expected resistance for {key[0]}V/{key[1]}W: {resistance_range[0]:.1f} - {resistance_range[1]:.1f} Ω")
-                except Exception as e:
-                    self.log.warning(f"Could not get resistance range from configuration: {e}")
-            
-            # Run measurement test sequence
-            try:
-                passed, msg, detail = self.measurement_test_seq.run_test(
-                    ui=ui,
-                    resistance_range=resistance_range,
-                    timeout_per_position_s=30.0  # Increased from 10s for Fluke 287 stability
-                )
-                return passed, msg, detail
-            except Exception as e:
-                self.log.error(f"MEAS: Measurement test sequence failed: {e}", exc_info=True)
-                # Return failure
-                detail = {
-                    "passed": False,
-                    "message": f"Measurement test exception: {e}",
-                    "values": {},
-                }
-                return False, str(e), detail
-        else:
+
+        relay_driver = self.relay_driver
+        meter_driver = self.meter_driver
+
+        if self.simulate:
             # Simulated readings (only when simulate mode explicitly enabled)
             self.log.info("MEAS: Using simulated values (simulate mode)")
             left_vals = [6.0, 7.0, 6.0]
@@ -1062,6 +1030,156 @@ class TestRunner:
 
             self.log.info(f"MEAS result | pass={passed} | msg={msg}")
             return passed, msg, detail
+
+        self.log.info("MEAS: Using REAL HARDWARE via numbered module tests")
+
+        resistance_range = None
+        cfg = getattr(self, "_selected_config", None)
+        if cfg and isinstance(cfg, dict):
+            rr = cfg.get("resistance_range")
+            if isinstance(rr, (list, tuple)) and len(rr) == 2:
+                try:
+                    resistance_range = (float(rr[0]), float(rr[1]))
+                except Exception:
+                    pass
+
+        if resistance_range is None or resistance_range == (0.0, 0.0):
+            try:
+                from element_tester.system.ui.configuration_ui import ConfigurationWindow
+                key = None
+                if cfg and isinstance(cfg, dict) and cfg.get("voltage") and cfg.get("wattage"):
+                    key = (int(cfg.get("voltage")), int(cfg.get("wattage")))
+                if key is None or key not in ConfigurationWindow.RESISTANCE_RANGE:
+                    key = (208, 7000)
+                if key in ConfigurationWindow.RESISTANCE_RANGE:
+                    resistance_range = ConfigurationWindow.RESISTANCE_RANGE[key]
+                    try:
+                        ui.append_measurement_log(
+                            f"Expected resistance for {key[0]}V/{key[1]}W: {resistance_range[0]:.1f} - {resistance_range[1]:.1f} Ω"
+                        )
+                    except Exception:
+                        ui.append_hypot_log(
+                            f"Expected resistance for {key[0]}V/{key[1]}W: {resistance_range[0]:.1f} - {resistance_range[1]:.1f} Ω"
+                        )
+            except Exception as e:
+                self.log.warning(f"Could not get resistance range from configuration: {e}")
+
+        module_names = self._discover_numbered_test_modules("element_tester.programs.measurement_test")
+        if not module_names:
+            detail = {
+                "passed": False,
+                "message": "No numbered measurement tests found in programs/measurement_test",
+                "values": {},
+            }
+            return False, detail["message"], detail
+
+        left_vals: list[float] = []
+        right_vals: list[float] = []
+        timeout_occurred = False
+        values: dict[str, float] = {}
+
+        try:
+            if relay_driver is not None:
+                relay_driver.all_off()
+            time.sleep(0.2)
+        except Exception as e:
+            self.log.error(f"MEAS: Failed to open all relays: {e}", exc_info=True)
+
+        try:
+            if meter_driver is not None:
+                meter_driver.flush_buffer()
+        except Exception as e:
+            self.log.error(f"MEAS: Failed to flush initial meter buffer: {e}", exc_info=True)
+
+        drivers = {
+            "relay_driver": relay_driver,
+            "meter_driver": meter_driver,
+        }
+        config = {
+            "ui": ui,
+            "resistance_range": resistance_range,
+            "timeout_per_position_s": 30.0,
+            "simulate": False,
+        }
+
+        for module_name in module_names:
+            run_test = self._load_test_callable(module_name)
+            if run_test is None:
+                detail = {
+                    "passed": False,
+                    "message": f"Invalid measurement test module: {module_name}",
+                    "values": values,
+                }
+                return False, detail["message"], detail
+
+            try:
+                result = cast(dict[str, object], run_test(drivers, config, self.log))
+                reading_valid = bool(result.get("reading_valid", False))
+                raw_value = result.get("value", 0.0)
+                if isinstance(raw_value, (int, float, str)):
+                    measured_value = float(raw_value)
+                else:
+                    measured_value = 0.0
+                pin_suffix = str(result.get("pin_suffix", ""))
+
+                if not reading_valid:
+                    timeout_occurred = bool(result.get("timed_out", False)) or timeout_occurred
+                    measured_value = 0.0
+
+                left_vals.append(measured_value)
+                right_vals.append(measured_value)
+
+                if pin_suffix:
+                    values[f"LP{pin_suffix}"] = measured_value
+                    values[f"RP{pin_suffix}"] = measured_value
+            except Exception as e:
+                self.log.error(f"MEAS: Numbered test failed in {module_name}: {e}", exc_info=True)
+                detail = {
+                    "passed": False,
+                    "message": f"Measurement test exception: {e}",
+                    "values": values,
+                }
+                try:
+                    if relay_driver is not None:
+                        relay_driver.all_off()
+                except Exception:
+                    pass
+                return False, str(e), detail
+
+        if timeout_occurred:
+            passed = False
+            msg = "Problem with the UT61xP measurement application. Call (318-272-3118)"
+        elif len(left_vals) == 0 or len(right_vals) == 0:
+            passed = False
+            msg = "No measurements were completed - check hardware and connections"
+            self.log.error("MEAS: No measurements completed!")
+        elif resistance_range is not None:
+            rmin, rmax = resistance_range
+            all_ok = True
+            failed_measurements = []
+            for idx, val in enumerate(left_vals + right_vals):
+                side = "L" if idx < len(left_vals) else "R"
+                pin = (idx % max(len(left_vals), 1)) + 1
+                if val == 0.0:
+                    all_ok = False
+                    failed_measurements.append(f"{side}P{pin} (failed/timeout)")
+                elif not (rmin <= val <= rmax):
+                    all_ok = False
+                    failed_measurements.append(f"{side}P{pin} ({val:.1f}Ω out of {rmin}-{rmax}Ω)")
+            passed = all_ok
+            msg = "All measurements within limits" if passed else f"Failed: {', '.join(failed_measurements)}"
+        else:
+            passed = True
+            msg = "Measurements recorded (no range configured)"
+
+        detail = {
+            "passed": passed,
+            "message": msg,
+            "values": values,
+        }
+
+        self.log.info(f"MEAS result | pass={passed} | msg={msg}")
+        return passed, msg, detail
 
 if __name__ == "__main__":
     import sys
