@@ -1,0 +1,33 @@
+======================================================================
+ELEMENT TESTER - TEST SESSION LOG
+======================================================================
+Session ID:    ET_ELOV0109
+Start Time:    2026-02-24 14:21:37
+Computer:      FRY-TESTER230
+Work Order:    testing
+Part Number:   testing
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+----------------------------------------------------------------------
+
+[14:21:59] MEASUREMENT TEST - Attempt #1
+    Result: FAIL
+    Message: Failed: LP1 (11.5Ω out of 9.1-9.8Ω), LP2 (11.6Ω out of 9.1-9.8Ω), LP3 (11.4Ω out of 9.1-9.8Ω), RP1 (11.5Ω out of 9.1-9.8Ω), RP2 (11.6Ω out of 9.1-9.8Ω), RP3 (11.4Ω out of 9.1-9.8Ω)
+    Pin Readings:
+        Pin 1 to 6 (L): 11.5
+        Pin 2 to 5 (L): 11.6
+        Pin 3 to 4 (L): 11.4
+        Pin 1 to 6 (R): 11.5
+        Pin 2 to 5 (R): 11.6
+        Pin 3 to 4 (R): 11.4
+
+----------------------------------------------------------------------
+SESSION SUMMARY
+----------------------------------------------------------------------
+End Time:      2026-02-24 14:22:02
+Duration:      25.7 seconds
+Hipot Attempts:       0
+Measurement Attempts: 1
+
+FINAL RESULT: FAIL
+Notes: Mode: normal | Measuring failed: Failed: LP1 (11.5Ω out of 9.1-9.8Ω), LP2 (11.6Ω out of 9.1-9.8Ω), LP3 (11.4Ω out of 9.1-9.8Ω), RP1 (11.5Ω out of 9.1-9.8Ω), RP2 (11.6Ω out of 9.1-9.8Ω), RP3 (11.4Ω out of 9.1-9.8Ω) (operator cancelled)
+======================================================================

@@ -4,19 +4,25 @@ Result logging module for Element Tester.
 This module handles logging test results to session-based log files.
 Each test session (when user enters work order and part number) creates a new file.
 
-Files are stored in data/results/ with naming convention:
+Files are stored with naming convention:
 - ET_ELOV0001.txt, ET_ELOV0002.txt, etc.
 
-The sequence number persists across application restarts via a tracking file.
+MULTI-TESTER COORDINATION:
+The sequence number is determined by checking the REMOTE location (L drive) first.
+This remote location is shared by all testers and contains results from ALL testers,
+ensuring unique sequence numbers even when multiple testers run simultaneously.
 
-Additionally, logs are written to a secondary network location:
-- I:\\AssemblyTester\\ElementTester\\TestLog
+Each tester writes results to TWO locations:
+1. LOCAL: data/results/ (only this tester's results)
+2. REMOTE: L:\Test Engineering\...\data (ALL testers' results - AUTHORITATIVE)
+
+The remote location serves as the single source of truth for sequence numbering,
+preventing collisions across multiple testers in the facility.
 """
 
 from __future__ import annotations
 from pathlib import Path
 from datetime import datetime
-import json
 import logging
 import re
 
@@ -24,8 +30,17 @@ from .system_info import get_computer_name
 
 log = logging.getLogger("element_tester.result_logging")
 
-# Secondary log location (network share for backup/archival)
-SECONDARY_LOG_PATH = Path(r"L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\data")
+# Remote/network log location - PRIMARY source for sequence numbering.
+# This location is shared across all testers to ensure unique, coordinated numbering.
+# Each tester writes to both this remote location AND its local data/results/ folder.
+# Sequence numbers are determined by checking this remote location FIRST.
+REMOTE_LOG_PATH = Path(r"L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\data")
+
+# Additional mirror log locations (network/share/local backups).
+# Add/remove entries as needed. Failures on any mirror path are non-fatal.
+MIRROR_LOG_PATHS: tuple[Path, ...] = (
+    REMOTE_LOG_PATH,
+)
 
 # Module-level session state
 _current_session: "TestSession | None" = None
@@ -38,7 +53,7 @@ class TestSession:
     A session starts when the user enters a work order and part number,
     and logs all test attempts (including retries) to a single file.
     
-    Writes to both the primary results_dir and a secondary network location.
+    Writes to the primary results_dir and any configured mirror locations.
     """
     
     def __init__(self, results_dir: Path, work_order: str, part_number: str, configuration: dict | None = None):
@@ -48,13 +63,14 @@ class TestSession:
         self.configuration = configuration
         self.start_time = datetime.now()
         
-        # Get next sequence number and create file
+        # Get next sequence number (coordinated via remote L drive location)
         self.sequence_num = _get_next_sequence_number(results_dir)
         self.filename = f"ET_ELOV{self.sequence_num:04d}.txt"
-        self.filepath = results_dir / self.filename
         
-        # Secondary log path (network location)
-        self.secondary_filepath = SECONDARY_LOG_PATH / self.filename
+        # Set up target file paths: local + remote
+        self.filepath = results_dir / self.filename  # Local tester location
+        self._target_filepaths = [self.filepath]
+        self._target_filepaths.extend([mirror_path / self.filename for mirror_path in MIRROR_LOG_PATHS])
         
         # Track attempts
         self.hipot_attempts: list[dict] = []
@@ -64,10 +80,10 @@ class TestSession:
         # Write session header
         self._write_header()
         
-        log.info(f"Started new test session: {self.filename}")
+        log.info(f"Started new test session: {self.filename} (writing to {len(self._target_filepaths)} locations)")
     
     def _write_header(self) -> None:
-        """Write the session header to the log file (both primary and secondary)."""
+        """Write the session header to all configured target locations."""
         self.results_dir.mkdir(parents=True, exist_ok=True)
         
         header_lines = []
@@ -85,30 +101,48 @@ class TestSession:
         
         header_content = "".join(header_lines)
         
-        # Write to primary location
-        with self.filepath.open("w", encoding="utf-8") as f:
-            f.write(header_content)
-        
-        # Write to secondary location (network)
-        self._write_to_secondary(header_content, mode="w")
+        self._write_to_targets(header_content, mode="w")
     
-    def _write_to_secondary(self, content: str, mode: str = "a") -> None:
+    def _write_to_targets(self, content: str, mode: str = "a") -> int:
         """
-        Write content to the secondary log location (network share).
+        Write content to all configured target locations.
         
-        Silently fails if the network location is unavailable to avoid
-        disrupting the primary logging flow.
+        Any individual target may fail without stopping the test flow.
+        If remote location is unavailable, continues with local-only mode.
         
         Args:
             content: Text content to write
             mode: File mode ('w' for write/overwrite, 'a' for append)
+
+        Returns:
+            Number of target files successfully written.
         """
-        try:
-            SECONDARY_LOG_PATH.mkdir(parents=True, exist_ok=True)
-            with self.secondary_filepath.open(mode, encoding="utf-8") as f:
-                f.write(content)
-        except Exception as e:
-            log.warning(f"Could not write to secondary log location: {e}")
+        success_count = 0
+        remote_success = False
+        local_success = False
+        
+        for target_path in self._target_filepaths:
+            try:
+                target_path.parent.mkdir(parents=True, exist_ok=True)
+                with target_path.open(mode, encoding="utf-8") as f:
+                    f.write(content)
+                success_count += 1
+                
+                # Track whether local or remote writes succeeded
+                if target_path == self.filepath:
+                    local_success = True
+                else:
+                    remote_success = True
+                    
+            except Exception as e:
+                log.warning(f"Could not write to log target {target_path}: {e}")
+
+        if success_count == 0:
+            log.error("Failed to write log content to all configured targets (local AND remote)")
+        elif not remote_success and local_success:
+            log.debug("Remote location unavailable - logging to local only")
+            
+        return success_count
     
     def log_hipot_attempt(self, passed: bool, message: str, raw_result: str | None = None) -> None:
         """
@@ -141,12 +175,7 @@ class TestSession:
         lines.append("\n")
         content = "".join(lines)
         
-        # Write to primary location
-        with self.filepath.open("a", encoding="utf-8") as f:
-            f.write(content)
-        
-        # Write to secondary location (network)
-        self._write_to_secondary(content)
+        self._write_to_targets(content)
         
         log.info(f"Logged hipot attempt #{attempt_num}: {'PASS' if passed else 'FAIL'}")
     
@@ -193,12 +222,7 @@ class TestSession:
         lines.append("\n")
         content = "".join(lines)
         
-        # Write to primary location
-        with self.filepath.open("a", encoding="utf-8") as f:
-            f.write(content)
-        
-        # Write to secondary location (network)
-        self._write_to_secondary(content)
+        self._write_to_targets(content)
         
         log.info(f"Logged measurement attempt #{attempt_num}: {'PASS' if passed else 'FAIL'}")
     
@@ -229,12 +253,7 @@ class TestSession:
         lines.append("=" * 70 + "\n")
         content = "".join(lines)
         
-        # Write to primary location
-        with self.filepath.open("a", encoding="utf-8") as f:
-            f.write(content)
-        
-        # Write to secondary location (network)
-        self._write_to_secondary(content)
+        self._write_to_targets(content)
         
         log.info(f"Finalized session {self.filename}: {self.final_result}")
 
@@ -243,22 +262,88 @@ def _get_next_sequence_number(results_dir: Path) -> int:
     """
     Get the next sequence number for log files.
     
-    Scans existing ET_ELOV*.txt files to find the highest number,
-    then returns that + 1.
+    PRIORITY: Checks REMOTE_LOG_PATH first (L drive) as the authoritative source.
+    This ensures all testers coordinate and avoid collisions, since the remote
+    location contains results from ALL testers across the facility.
+    
+    FALLBACK: If remote location is unavailable, uses local results directory only.
+    When remote becomes available again, automatically resumes with remote numbering.
+    
+    Returns the next available sequence number that doesn't exist in ANY location.
     """
     results_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Find all existing ET_ELOV*.txt files
+
+    # Find all existing ET_ELOV*.txt files across all configured locations
     pattern = re.compile(r"ET_ELOV(\d{4})\.txt$")
     max_num = 0
-    
-    for file in results_dir.glob("ET_ELOV*.txt"):
-        match = pattern.match(file.name)
-        if match:
-            num = int(match.group(1))
-            max_num = max(max_num, num)
-    
-    return max_num + 1
+    remote_available = False
+
+    # PRIORITY 1: Check remote/network location first (L drive)
+    # This is the primary source of truth shared by all testers
+    for directory in MIRROR_LOG_PATHS:
+        try:
+            log.debug(f"Checking remote location for sequence numbers: {directory}")
+            if directory.exists():
+                for file in directory.glob("ET_ELOV*.txt"):
+                    match = pattern.match(file.name)
+                    if match:
+                        num = int(match.group(1))
+                        max_num = max(max_num, num)
+                remote_available = True
+                log.info(f"Remote location accessible - max sequence: {max_num}")
+            else:
+                log.warning(f"Remote location not accessible: {directory}")
+        except Exception as e:
+            # Unavailable/missing remote paths are logged but not fatal
+            log.warning(f"Could not access remote log location {directory}: {e}")
+            continue
+
+    # PRIORITY 2: Check local results directory
+    # If remote unavailable, this becomes the primary source
+    # If remote available, this is checked for safety
+    try:
+        log.debug(f"Checking local location for sequence numbers: {results_dir}")
+        for file in results_dir.glob("ET_ELOV*.txt"):
+            match = pattern.match(file.name)
+            if match:
+                num = int(match.group(1))
+                max_num = max(max_num, num)
+        log.debug(f"After local check, max sequence: {max_num}")
+    except Exception as e:
+        log.warning(f"Could not access local results directory {results_dir}: {e}")
+
+    if not remote_available:
+        log.warning("Remote location unavailable - using local numbering only. Will sync when reconnected.")
+
+    candidate = max_num + 1
+
+    # Extra safety: ensure candidate doesn't already exist in any accessible target.
+    # Check remote location first (if available), then local.
+    while True:
+        filename = f"ET_ELOV{candidate:04d}.txt"
+        in_use = False
+        
+        # Check remote location(s) first (if accessible)
+        for directory in MIRROR_LOG_PATHS:
+            try:
+                if directory.exists() and (directory / filename).exists():
+                    in_use = True
+                    break
+            except Exception:
+                continue
+        
+        # Check local location
+        if not in_use:
+            try:
+                if (results_dir / filename).exists():
+                    in_use = True
+            except Exception:
+                pass
+
+        if not in_use:
+            log.info(f"Next sequence number determined: {candidate} (remote {'available' if remote_available else 'UNAVAILABLE - using local only'})")
+            return candidate
+        candidate += 1
 
 
 def start_test_session(
