@@ -18,10 +18,10 @@ from typing import Optional
 
 from .system_info import get_computer_name
 
-# Path to write QC ticket. Change if desired.
-qc_file_location = r"C:\Files\element tester\Element_Tester\assets\QCTicket.txt"
+# Path to write QC ticket.
+qc_file_location = r"C:\Files\ElementTester\ElementTesterV2\assets\QCTicket.txt"
 
-# Secondary/fallback path for L: drive (network/shortcut deployment)
+# Fallback/additional location in case primary is unavailable (optional).
 qc_file_location_secondary = r"L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt"
 
 # Default printer name for QC labels.

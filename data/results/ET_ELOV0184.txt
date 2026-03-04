@@ -1,0 +1,60 @@
+======================================================================
+ELEMENT TESTER - TEST SESSION LOG
+======================================================================
+Session ID:    ET_ELOV0184
+Start Time:    2026-03-01 12:59:29
+Computer:      FRY-TESTER210
+Work Order:    JJ
+Part Number:   UT
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+----------------------------------------------------------------------
+
+[12:59:44] MEASUREMENT TEST - Attempt #1
+    Result: FAIL
+    Message: Failed: LP1 (14.2Ω out of 9.1-9.8Ω), LP3 (13.8Ω out of 9.1-9.8Ω), RP1 (14.2Ω out of 9.1-9.8Ω), RP3 (13.8Ω out of 9.1-9.8Ω)
+    Pin Readings:
+        Pin 1 to 6 (L): 14.2
+        Pin 2 to 5 (L): 9.5
+        Pin 3 to 4 (L): 13.8
+        Pin 1 to 6 (R): 14.2
+        Pin 2 to 5 (R): 9.5
+        Pin 3 to 4 (R): 13.8
+
+[13:00:00] MEASUREMENT TEST - Attempt #2
+    Result: FAIL
+    Message: Failed: LP1 (14.2Ω out of 9.1-9.8Ω), LP3 (72000000.0Ω out of 9.1-9.8Ω), RP1 (14.2Ω out of 9.1-9.8Ω), RP3 (72000000.0Ω out of 9.1-9.8Ω)
+    Pin Readings:
+        Pin 1 to 6 (L): 14.2
+        Pin 2 to 5 (L): 9.5
+        Pin 3 to 4 (L): 72000000.0
+        Pin 1 to 6 (R): 14.2
+        Pin 2 to 5 (R): 9.5
+        Pin 3 to 4 (R): 72000000.0
+
+[13:00:49] MEASUREMENT TEST - Attempt #3
+    Result: PASS
+    Message: All measurements within limits
+    Pin Readings:
+        Pin 1 to 6 (L): 9.7
+        Pin 2 to 5 (L): 9.5
+        Pin 3 to 4 (L): 9.3
+        Pin 1 to 6 (R): 9.7
+        Pin 2 to 5 (R): 9.5
+        Pin 3 to 4 (R): 9.3
+
+[13:01:00] HIPOT TEST - Attempt #1
+    Result: PASS
+    Message: 01,ACW,PASS,1.24,2.330,2.0
+    Raw: 01,ACW,PASS,1.24,2.330,2.0
+
+----------------------------------------------------------------------
+SESSION SUMMARY
+----------------------------------------------------------------------
+End Time:      2026-03-01 14:56:30
+Duration:      7021.1 seconds
+Hipot Attempts:       1
+Measurement Attempts: 3
+
+FINAL RESULT: PASS
+Notes: Mode: normal | Hipot + Measuring completed successfully
+======================================================================

@@ -1,0 +1,66 @@
+======================================================================
+ELEMENT TESTER - TEST SESSION LOG
+======================================================================
+Session ID:    ET_ELOV0221
+Start Time:    2026-03-04 05:35:37
+Computer:      FRY-TESTER210
+Work Order:    76611
+Part Number:   8074598
+Configuration: {'voltage': 208, 'wattage': 7000, 'resistance_range': (9.1, 9.8)}
+----------------------------------------------------------------------
+
+[05:37:35] MEASUREMENT TEST - Attempt #1
+    Result: FAIL
+    Message: Problem with the UT61xP measurement application. Call (318-272-3118)
+    Pin Readings:
+        Pin 1 to 6 (L): 0.0
+        Pin 2 to 5 (L): 0.0
+        Pin 3 to 4 (L): 0.0
+        Pin 1 to 6 (R): 0.0
+        Pin 2 to 5 (R): 0.0
+        Pin 3 to 4 (R): 0.0
+
+[05:39:36] MEASUREMENT TEST - Attempt #2
+    Result: FAIL
+    Message: Problem with the UT61xP measurement application. Call (318-272-3118)
+    Pin Readings:
+        Pin 1 to 6 (L): 0.0
+        Pin 2 to 5 (L): 0.0
+        Pin 3 to 4 (L): 0.0
+        Pin 1 to 6 (R): 0.0
+        Pin 2 to 5 (R): 0.0
+        Pin 3 to 4 (R): 0.0
+
+[06:22:41] MEASUREMENT TEST - Attempt #3
+    Result: FAIL
+    Message: Problem with the UT61xP measurement application. Call (318-272-3118)
+    Pin Readings:
+        Pin 1 to 6 (L): 0.0
+        Pin 2 to 5 (L): 0.0
+        Pin 3 to 4 (L): 0.0
+        Pin 1 to 6 (R): 0.0
+        Pin 2 to 5 (R): 0.0
+        Pin 3 to 4 (R): 0.0
+
+[07:26:15] MEASUREMENT TEST - Attempt #4
+    Result: FAIL
+    Message: Problem with the UT61xP measurement application. Call (318-272-3118)
+    Pin Readings:
+        Pin 1 to 6 (L): 0.0
+        Pin 2 to 5 (L): 9.99999999e+37
+        Pin 3 to 4 (L): 43710000.0
+        Pin 1 to 6 (R): 0.0
+        Pin 2 to 5 (R): 9.99999999e+37
+        Pin 3 to 4 (R): 43710000.0
+
+----------------------------------------------------------------------
+SESSION SUMMARY
+----------------------------------------------------------------------
+End Time:      2026-03-04 07:26:25
+Duration:      6648.6 seconds
+Hipot Attempts:       0
+Measurement Attempts: 4
+
+FINAL RESULT: FAIL
+Notes: Mode: normal | Measuring failed: Problem with the UT61xP measurement application. Call (318-272-3118) (operator cancelled)
+======================================================================

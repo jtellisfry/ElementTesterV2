@@ -162,3 +162,3201 @@ _print_with_win32_gdi: Font created and selected
 _print_with_win32_gdi: Printing 5 lines
 _print_with_win32_gdi: Print completed successfully
 _worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40744
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0114
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40744
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0114
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40744
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0115
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40744
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0115
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (64 chars):
+PASSED  FRY-TESTER210
+WO:40744
+PN:8074598
+TS: 2026-02-25
+SN: N/A
+File exists: True, size: 68 bytes
+File content verification (64 chars):
+PASSED  FRY-TESTER210
+WO:40744
+PN:8074598
+TS: 2026-02-25
+SN: N/A
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40744
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0117
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40744
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0117
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40738
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0118
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40738
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0118
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0119
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0119
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0120
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0120
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0121
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0121
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0122
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0122
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0123
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0123
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-25
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (69 chars):
+PASSED  FRY-TESTER210
+WO:40
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0124
+File exists: True, size: 73 bytes
+File content verification (69 chars):
+PASSED  FRY-TESTER210
+WO:40
+PN:8074598
+TS: 2026-02-25
+SN: ET_ELOV0124
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-26
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0125
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0125
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-26
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0126
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0126
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-26
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0127
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0127
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-26
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0128
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0128
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-26
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0129
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0129
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-26
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0130
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0130
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-26
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0131
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0131
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-26
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0132
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0132
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-26
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0133
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0133
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-26
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0134
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40745
+PN:8074598
+TS: 2026-02-26
+SN: ET_ELOV0134
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:55552
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0135
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:55552
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0135
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:55241
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0136
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:55241
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0136
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:65455
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0137
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:65455
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0137
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (71 chars):
+PASSED  FRY-TESTER210
+WO:7245
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0138
+File exists: True, size: 75 bytes
+File content verification (71 chars):
+PASSED  FRY-TESTER210
+WO:7245
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0138
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:84511
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0139
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:84511
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0139
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (71 chars):
+PASSED  FRY-TESTER210
+WO:5472
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0140
+File exists: True, size: 75 bytes
+File content verification (71 chars):
+PASSED  FRY-TESTER210
+WO:5472
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0140
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:66454
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0141
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:66454
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0141
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:45798
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0142
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:45798
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0142
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:47244
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0143
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:47244
+PN:8074598
+TS: 2026-02-27
+SN: ET_ELOV0143
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (70 chars):
+PASSED  FRY-TESTER210
+WO:212
+PN:8533254
+TS: 2026-02-27
+SN: ET_ELOV0144
+File exists: True, size: 74 bytes
+File content verification (70 chars):
+PASSED  FRY-TESTER210
+WO:212
+PN:8533254
+TS: 2026-02-27
+SN: ET_ELOV0144
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (69 chars):
+PASSED  FRY-TESTER210
+WO:5747
+PN:57865
+TS: 2026-02-27
+SN: ET_ELOV0145
+File exists: True, size: 73 bytes
+File content verification (69 chars):
+PASSED  FRY-TESTER210
+WO:5747
+PN:57865
+TS: 2026-02-27
+SN: ET_ELOV0145
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (68 chars):
+PASSED  FRY-TESTER210
+WO:2445
+PN:6867
+TS: 2026-02-27
+SN: ET_ELOV0146
+File exists: True, size: 72 bytes
+File content verification (68 chars):
+PASSED  FRY-TESTER210
+WO:2445
+PN:6867
+TS: 2026-02-27
+SN: ET_ELOV0146
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:44242
+PN:5452442
+TS: 2026-02-27
+SN: ET_ELOV0147
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:44242
+PN:5452442
+TS: 2026-02-27
+SN: ET_ELOV0147
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (69 chars):
+PASSED  FRY-TESTER210
+WO:7575
+PN:24257
+TS: 2026-02-27
+SN: ET_ELOV0148
+File exists: True, size: 73 bytes
+File content verification (69 chars):
+PASSED  FRY-TESTER210
+WO:7575
+PN:24257
+TS: 2026-02-27
+SN: ET_ELOV0148
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (71 chars):
+PASSED  FRY-TESTER210
+WO:441414
+PN:28625
+TS: 2026-02-27
+SN: ET_ELOV0149
+File exists: True, size: 75 bytes
+File content verification (71 chars):
+PASSED  FRY-TESTER210
+WO:441414
+PN:28625
+TS: 2026-02-27
+SN: ET_ELOV0149
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (69 chars):
+PASSED  FRY-TESTER210
+WO:7657
+PN:57525
+TS: 2026-02-27
+SN: ET_ELOV0150
+File exists: True, size: 73 bytes
+File content verification (69 chars):
+PASSED  FRY-TESTER210
+WO:7657
+PN:57525
+TS: 2026-02-27
+SN: ET_ELOV0150
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (70 chars):
+PASSED  FRY-TESTER210
+WO:42254
+PN:22442
+TS: 2026-02-27
+SN: ET_ELOV0151
+File exists: True, size: 74 bytes
+File content verification (70 chars):
+PASSED  FRY-TESTER210
+WO:42254
+PN:22442
+TS: 2026-02-27
+SN: ET_ELOV0151
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-27
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (70 chars):
+PASSED  FRY-TESTER210
+WO:7727
+PN:567878
+TS: 2026-02-27
+SN: ET_ELOV0152
+File exists: True, size: 74 bytes
+File content verification (70 chars):
+PASSED  FRY-TESTER210
+WO:7727
+PN:567878
+TS: 2026-02-27
+SN: ET_ELOV0152
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (69 chars):
+PASSED  FRY-TESTER210
+WO:68777
+PN:4455
+TS: 2026-02-28
+SN: ET_ELOV0153
+File exists: True, size: 73 bytes
+File content verification (69 chars):
+PASSED  FRY-TESTER210
+WO:68777
+PN:4455
+TS: 2026-02-28
+SN: ET_ELOV0153
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (68 chars):
+PASSED  FRY-TESTER210
+WO:275
+PN:56567
+TS: 2026-02-28
+SN: ET_ELOV0154
+File exists: True, size: 72 bytes
+File content verification (68 chars):
+PASSED  FRY-TESTER210
+WO:275
+PN:56567
+TS: 2026-02-28
+SN: ET_ELOV0154
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (70 chars):
+PASSED  FRY-TESTER210
+WO:36836
+PN:45533
+TS: 2026-02-28
+SN: ET_ELOV0156
+File exists: True, size: 74 bytes
+File content verification (70 chars):
+PASSED  FRY-TESTER210
+WO:36836
+PN:45533
+TS: 2026-02-28
+SN: ET_ELOV0156
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (66 chars):
+PASSED  FRY-TESTER210
+WO:686
+PN:837
+TS: 2026-02-28
+SN: ET_ELOV0157
+File exists: True, size: 70 bytes
+File content verification (66 chars):
+PASSED  FRY-TESTER210
+WO:686
+PN:837
+TS: 2026-02-28
+SN: ET_ELOV0157
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (70 chars):
+PASSED  FRY-TESTER210
+WO:5475
+PN:575757
+TS: 2026-02-28
+SN: ET_ELOV0158
+File exists: True, size: 74 bytes
+File content verification (70 chars):
+PASSED  FRY-TESTER210
+WO:5475
+PN:575757
+TS: 2026-02-28
+SN: ET_ELOV0158
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (66 chars):
+PASSED  FRY-TESTER210
+WO:6386
+PN:56
+TS: 2026-02-28
+SN: ET_ELOV0159
+File exists: True, size: 70 bytes
+File content verification (66 chars):
+PASSED  FRY-TESTER210
+WO:6386
+PN:56
+TS: 2026-02-28
+SN: ET_ELOV0159
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (68 chars):
+PASSED  FRY-TESTER210
+WO:86
+PN:655757
+TS: 2026-02-28
+SN: ET_ELOV0160
+File exists: True, size: 72 bytes
+File content verification (68 chars):
+PASSED  FRY-TESTER210
+WO:86
+PN:655757
+TS: 2026-02-28
+SN: ET_ELOV0160
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (66 chars):
+PASSED  FRY-TESTER210
+WO:6664
+PN:KK
+TS: 2026-02-28
+SN: ET_ELOV0161
+File exists: True, size: 70 bytes
+File content verification (66 chars):
+PASSED  FRY-TESTER210
+WO:6664
+PN:KK
+TS: 2026-02-28
+SN: ET_ELOV0161
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (64 chars):
+PASSED  FRY-TESTER210
+WO:HH
+PN:GG
+TS: 2026-02-28
+SN: ET_ELOV0162
+File exists: True, size: 68 bytes
+File content verification (64 chars):
+PASSED  FRY-TESTER210
+WO:HH
+PN:GG
+TS: 2026-02-28
+SN: ET_ELOV0162
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (64 chars):
+PASSED  FRY-TESTER210
+WO:JL
+PN:NJ
+TS: 2026-02-28
+SN: ET_ELOV0163
+File exists: True, size: 68 bytes
+File content verification (64 chars):
+PASSED  FRY-TESTER210
+WO:JL
+PN:NJ
+TS: 2026-02-28
+SN: ET_ELOV0163
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (69 chars):
+PASSED  FRY-TESTER210
+WO:5765
+PN:26729
+TS: 2026-02-28
+SN: ET_ELOV0164
+File exists: True, size: 73 bytes
+File content verification (69 chars):
+PASSED  FRY-TESTER210
+WO:5765
+PN:26729
+TS: 2026-02-28
+SN: ET_ELOV0164
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (70 chars):
+PASSED  FRY-TESTER210
+WO:62454
+PN:23746
+TS: 2026-02-28
+SN: ET_ELOV0165
+File exists: True, size: 74 bytes
+File content verification (70 chars):
+PASSED  FRY-TESTER210
+WO:62454
+PN:23746
+TS: 2026-02-28
+SN: ET_ELOV0165
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (69 chars):
+PASSED  FRY-TESTER210
+WO:242
+PN:524457
+TS: 2026-02-28
+SN: ET_ELOV0166
+File exists: True, size: 73 bytes
+File content verification (69 chars):
+PASSED  FRY-TESTER210
+WO:242
+PN:524457
+TS: 2026-02-28
+SN: ET_ELOV0166
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (66 chars):
+PASSED  FRY-TESTER210
+WO:5756
+PN:72
+TS: 2026-02-28
+SN: ET_ELOV0167
+File exists: True, size: 70 bytes
+File content verification (66 chars):
+PASSED  FRY-TESTER210
+WO:5756
+PN:72
+TS: 2026-02-28
+SN: ET_ELOV0167
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (68 chars):
+PASSED  FRY-TESTER210
+WO:2757
+PN:5757
+TS: 2026-02-28
+SN: ET_ELOV0168
+File exists: True, size: 72 bytes
+File content verification (68 chars):
+PASSED  FRY-TESTER210
+WO:2757
+PN:5757
+TS: 2026-02-28
+SN: ET_ELOV0168
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (70 chars):
+PASSED  FRY-TESTER210
+WO:26578
+PN:65827
+TS: 2026-02-28
+SN: ET_ELOV0169
+File exists: True, size: 74 bytes
+File content verification (70 chars):
+PASSED  FRY-TESTER210
+WO:26578
+PN:65827
+TS: 2026-02-28
+SN: ET_ELOV0169
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-02-28
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (68 chars):
+PASSED  FRY-TESTER210
+WO:507
+PN:86259
+TS: 2026-02-28
+SN: ET_ELOV0170
+File exists: True, size: 72 bytes
+File content verification (68 chars):
+PASSED  FRY-TESTER210
+WO:507
+PN:86259
+TS: 2026-02-28
+SN: ET_ELOV0170
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (68 chars):
+PASSED  FRY-TESTER210
+WO:57865
+PN:765
+TS: 2026-03-01
+SN: ET_ELOV0171
+File exists: True, size: 72 bytes
+File content verification (68 chars):
+PASSED  FRY-TESTER210
+WO:57865
+PN:765
+TS: 2026-03-01
+SN: ET_ELOV0171
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (71 chars):
+PASSED  FRY-TESTER210
+WO:6578
+PN:3265978
+TS: 2026-03-01
+SN: ET_ELOV0172
+File exists: True, size: 75 bytes
+File content verification (71 chars):
+PASSED  FRY-TESTER210
+WO:6578
+PN:3265978
+TS: 2026-03-01
+SN: ET_ELOV0172
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (71 chars):
+PASSED  FRY-TESTER210
+WO:7824569
+PN:8572
+TS: 2026-03-01
+SN: ET_ELOV0173
+File exists: True, size: 75 bytes
+File content verification (71 chars):
+PASSED  FRY-TESTER210
+WO:7824569
+PN:8572
+TS: 2026-03-01
+SN: ET_ELOV0173
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (69 chars):
+PASSED  FRY-TESTER210
+WO:4527
+PN:45127
+TS: 2026-03-01
+SN: ET_ELOV0174
+File exists: True, size: 73 bytes
+File content verification (69 chars):
+PASSED  FRY-TESTER210
+WO:4527
+PN:45127
+TS: 2026-03-01
+SN: ET_ELOV0174
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (64 chars):
+PASSED  FRY-TESTER210
+WO:57
+PN:57
+TS: 2026-03-01
+SN: ET_ELOV0175
+File exists: True, size: 68 bytes
+File content verification (64 chars):
+PASSED  FRY-TESTER210
+WO:57
+PN:57
+TS: 2026-03-01
+SN: ET_ELOV0175
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (67 chars):
+PASSED  FRY-TESTER210
+WO:8765
+PN:214
+TS: 2026-03-01
+SN: ET_ELOV0176
+File exists: True, size: 71 bytes
+File content verification (67 chars):
+PASSED  FRY-TESTER210
+WO:8765
+PN:214
+TS: 2026-03-01
+SN: ET_ELOV0176
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (66 chars):
+PASSED  FRY-TESTER210
+WO:567
+PN:257
+TS: 2026-03-01
+SN: ET_ELOV0177
+File exists: True, size: 70 bytes
+File content verification (66 chars):
+PASSED  FRY-TESTER210
+WO:567
+PN:257
+TS: 2026-03-01
+SN: ET_ELOV0177
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (73 chars):
+PASSED  FRY-TESTER210
+WO:65475857
+PN:20345
+TS: 2026-03-01
+SN: ET_ELOV0178
+File exists: True, size: 77 bytes
+File content verification (73 chars):
+PASSED  FRY-TESTER210
+WO:65475857
+PN:20345
+TS: 2026-03-01
+SN: ET_ELOV0178
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (69 chars):
+PASSED  FRY-TESTER210
+WO:JYJHJ
+PN:IYJJ
+TS: 2026-03-01
+SN: ET_ELOV0179
+File exists: True, size: 73 bytes
+File content verification (69 chars):
+PASSED  FRY-TESTER210
+WO:JYJHJ
+PN:IYJJ
+TS: 2026-03-01
+SN: ET_ELOV0179
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (67 chars):
+PASSED  FRY-TESTER210
+WO:YUTT
+PN:HTT
+TS: 2026-03-01
+SN: ET_ELOV0180
+File exists: True, size: 71 bytes
+File content verification (67 chars):
+PASSED  FRY-TESTER210
+WO:YUTT
+PN:HTT
+TS: 2026-03-01
+SN: ET_ELOV0180
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (78 chars):
+PASSED  FRY-TESTER210
+WO:KUKHQUTU1JU6UU
+PN:IU7I
+TS: 2026-03-01
+SN: ET_ELOV0181
+File exists: True, size: 82 bytes
+File content verification (78 chars):
+PASSED  FRY-TESTER210
+WO:KUKHQUTU1JU6UU
+PN:IU7I
+TS: 2026-03-01
+SN: ET_ELOV0181
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (69 chars):
+PASSED  FRY-TESTER210
+WO:4HKJ
+PN:YRJHN
+TS: 2026-03-01
+SN: ET_ELOV0183
+File exists: True, size: 73 bytes
+File content verification (69 chars):
+PASSED  FRY-TESTER210
+WO:4HKJ
+PN:YRJHN
+TS: 2026-03-01
+SN: ET_ELOV0183
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (64 chars):
+PASSED  FRY-TESTER210
+WO:JJ
+PN:UT
+TS: 2026-03-01
+SN: ET_ELOV0184
+File exists: True, size: 68 bytes
+File content verification (64 chars):
+PASSED  FRY-TESTER210
+WO:JJ
+PN:UT
+TS: 2026-03-01
+SN: ET_ELOV0184
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (68 chars):
+PASSED  FRY-TESTER210
+WO:H NG
+PN:JHJG
+TS: 2026-03-01
+SN: ET_ELOV0185
+File exists: True, size: 72 bytes
+File content verification (68 chars):
+PASSED  FRY-TESTER210
+WO:H NG
+PN:JHJG
+TS: 2026-03-01
+SN: ET_ELOV0185
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-01
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (71 chars):
+PASSED  FRY-TESTER210
+WO:211441
+PN:57557
+TS: 2026-03-01
+SN: ET_ELOV0186
+File exists: True, size: 75 bytes
+File content verification (71 chars):
+PASSED  FRY-TESTER210
+WO:211441
+PN:57557
+TS: 2026-03-01
+SN: ET_ELOV0186
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0187
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0187
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0188
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0188
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0189
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0189
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0190
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0190
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:41638
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0191
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:41638
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0191
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:41638
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0192
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:41638
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0192
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:41638
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0193
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:41638
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0193
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:41638
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0194
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:41638
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0194
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0195
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0195
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0196
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0196
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0197
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0197
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0198
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0198
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0199
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0199
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0200
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0200
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0201
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0201
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0202
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0202
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0203
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:40578
+PN:8074598
+TS: 2026-03-03
+SN: ET_ELOV0203
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2(Python)\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2(Python)\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER230
+WO:75904
+PN:8074600
+TS: 2026-03-03
+SN: ET_ELOV0204
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER230
+WO:75904
+PN:8074600
+TS: 2026-03-03
+SN: ET_ELOV0204
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2(Python)\backup\Version 1\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2(Python)\backup\Version 1
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (74 chars):
+PASSED  FRY-TESTER230
+WO:testing
+PN:testing
+TS: 2026-03-03
+SN: ET_ELOV0214
+File exists: True, size: 78 bytes
+File content verification (74 chars):
+PASSED  FRY-TESTER230
+WO:testing
+PN:testing
+TS: 2026-03-03
+SN: ET_ELOV0214
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-03
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2(Python)\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2(Python)\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (74 chars):
+PASSED  FRY-TESTER230
+WO:testing
+PN:testing
+TS: 2026-03-03
+SN: ET_ELOV0215
+File exists: True, size: 78 bytes
+File content verification (74 chars):
+PASSED  FRY-TESTER230
+WO:testing
+PN:testing
+TS: 2026-03-03
+SN: ET_ELOV0215
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-04
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2(Python)\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2(Python)\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER230
+WO:75904
+PN:8074600
+TS: 2026-03-04
+SN: ET_ELOV0216
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER230
+WO:75904
+PN:8074600
+TS: 2026-03-04
+SN: ET_ELOV0216
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-04
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2(Python)\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2(Python)\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER230
+WO:75904
+PN:8074600
+TS: 2026-03-04
+SN: ET_ELOV0217
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER230
+WO:75904
+PN:8074600
+TS: 2026-03-04
+SN: ET_ELOV0217
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-04
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2(Python)\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2(Python)\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER230
+WO:75904
+PN:8074600
+TS: 2026-03-04
+SN: ET_ELOV0218
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER230
+WO:75904
+PN:8074600
+TS: 2026-03-04
+SN: ET_ELOV0218
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-04
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-04
+SN: ET_ELOV0219
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-04
+SN: ET_ELOV0219
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-04
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-04
+SN: ET_ELOV0222
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-04
+SN: ET_ELOV0222
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
+
+==================================================
+Timestamp: 2026-03-04
+sys.frozen: True
+sys.executable: C:\Files\ElementTester\ElementTesterV2\main\ElementTesterV2.exe
+os.getcwd(): C:\Files\ElementTester\ElementTesterV2\main
+File path: L:\Test Engineering\Tester Information\ElementTesterV2(Python)\ElementTesterV2\assets\QCTicket.txt
+Printer: Brother PT-P700
+Text to print (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-04
+SN: ET_ELOV0223
+File exists: True, size: 76 bytes
+File content verification (72 chars):
+PASSED  FRY-TESTER210
+WO:76611
+PN:8074598
+TS: 2026-03-04
+SN: ET_ELOV0223
+_worker: Using win32 GDI print method
+_worker: Printer: Brother PT-P700
+_print_with_win32_gdi: win32print and win32ui imported successfully
+_print_with_win32_gdi: CreateDC successful
+_print_with_win32_gdi: CreatePrinterDC(Brother PT-P700) successful
+_print_with_win32_gdi: Printer height (VERTRES): 128, width (HORZRES): 243
+_print_with_win32_gdi: StartDoc/StartPage successful
+_print_with_win32_gdi: Lines: 5, available_height: 112, line_height: 22, font_height: 18
+_print_with_win32_gdi: Font created and selected
+_print_with_win32_gdi: Printing 5 lines
+_print_with_win32_gdi: Print completed successfully
+_worker: win32 GDI print result: True
